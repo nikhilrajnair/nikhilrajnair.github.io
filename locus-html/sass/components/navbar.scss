@@ -1,0 +1,10 @@
+.navbar-light .navbar-nav .nav-link {
+    color: #202020;
+    &:hover{
+        color: #0078F4;
+    }
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #0078F4;
+}

@@ -1,0 +1,189 @@
+.footer {
+    .second-row {
+        margin-top: 50px;
+    }
+
+    h6 {
+        color: #393F4B;
+        margin-bottom: 10px !important;
+    }
+
+    .list-group {
+        max-width: 200px;
+        list-style: none;
+        padding: 0;
+        font-size: 0.9rem;
+        margin-left: 0;
+
+
+
+        li {
+            padding-bottom: 0.8rem;
+
+            a {
+                color: #3A404E;
+            }
+        }
+    }
+
+    .sub-footer {
+        padding: 18px 0 18px 0;
+        margin: 0;
+        align-items: center;
+        border-top: 1px solid #e6e5e5;
+    }
+
+    .copyright-footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .social-icons {
+        list-style: none;
+        padding: 0;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+
+        li {
+            display: inline;
+            padding-right: 10px;
+
+            a {
+                i {
+                    width: 35px;
+                    height: 35px;
+                    font-size: .875rem;
+                    line-height: 35px;
+                    background-color: #fff;
+                    border: 1px solid #b3b3b3;
+                    border-radius: 50%;
+                    color: #b3b3b3;
+                    transition: background-color 250ms, border 250ms;
+                    font-size: 18px;
+                    text-align: center;
+                }
+
+                &:hover {
+                    i {
+                        color: #fff;
+                    }
+
+                    .fa-facebook {
+                        background-color: #3c5a96;
+                        border-color: #3c5a96;
+                    }
+
+                    .fa-twitter {
+                        background-color: #59adeb;
+                        border-color: #59adeb;
+                    }
+
+                    .fa-youtube {
+                        background-color: #de3236;
+                        border-color: #de3236;
+                    }
+
+                    .fa-instagram {
+                        background-color: #e1306c;
+                        border-color: #e1306c;
+                    }
+
+                    .fa-linkedin {
+                        background-color: #007bb6;
+                        border-color: #007bb6;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .lang {
+        padding-left: 0;
+        max-width: 100%;
+        margin-top: 0.5rem;
+
+        li {
+            list-style-type: none;
+            padding-right: 1.5rem;
+            text-align: center;
+            width: 125px;
+            display: inline-block;
+
+            p {
+                font-size: 13px;
+                margin: 0;
+                color: #3a414e;
+            }
+
+            img {
+                height: 30px;
+            }
+        }
+    }
+
+    .form-wrapper {
+        width: 100%;
+        max-width: 520px;
+
+        .email-only-signup {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+
+            .email-form,
+            button {
+                margin-bottom: 0;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 9px 9px 9px 12px;
+                height: 45px;
+                outline: 0;
+                margin-right: -15px;
+            }
+
+            .cmn-btn {
+                padding: 0.9rem 1.4rem;
+                font-size: 0.8rem;
+                line-height: 1.5;
+                border-radius: 0.25rem;
+                transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                background-color: #0072f5;
+                border-color: #0072f5;
+                border: 0;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: #fff;
+            }
+
+            .form-control{
+                font-style: italic;  
+                font-size: 14px;
+            }
+
+
+        }
+
+        .disclamier {
+            padding-top: 0.8rem;
+            display: block;
+            width: 100%;
+            float: left;
+
+            .privacy-p {
+                padding-left: 26px;
+            }
+        }
+
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        .copyright-footer {
+            flex-direction: column;
+        }
+    }
+}

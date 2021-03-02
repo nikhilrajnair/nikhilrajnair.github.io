@@ -1,0 +1,98 @@
+.home-one {
+    // background-image: url('../../img/banner-bg.png');
+    background-color: #E7F3FF !important;
+    background-position: center left;
+    // background-size: 200px;
+    background-repeat: no-repeat;
+    padding: 10rem 0rem 11.5rem;
+    position: relative;
+
+    .banner-bg {
+        position: absolute;
+        left: 0;
+        top: 18%;
+        width: 11%;
+        z-index: 0;
+    }
+
+    .wrapper {
+        h2 {
+            font-weight: 600;
+            font-size: 1.9rem;
+            letter-spacing: 1px;
+            padding-bottom: 0;
+            line-height: 1.6;
+        }
+
+        p {
+            padding: 0.8rem 0rem 2rem;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        span {
+            position: absolute;
+            margin-left: 5px;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            top: 16px;
+            left: 10px;
+        }
+
+
+        .form-control {
+            box-shadow: 0px 0px 12px rgba(9, 10, 12, 10%);
+            padding-left: 40px !important;
+            z-index: 0;
+            border-radius: 24px;
+            padding: 12px;
+        }
+    }
+}
+
+.newsletter {
+    background-color: #E7F3FF !important;
+    padding: 10rem 0rem 11.5rem;
+
+    h2 {
+        font-weight: 600;
+        font-size: 1.9rem;
+        letter-spacing: 1px;
+        padding-bottom: 0;
+        line-height: 1.6;
+    }
+
+    p {
+        padding: 0.8rem 0rem 2rem;
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+
+    .form-holder {
+        padding-top: 50px;
+
+        .form-control {
+            border-radius: 4px;
+            padding: 10px;
+            border-color: transparent;
+            box-shadow: 0px 0px 12px rgba(9, 10, 12, 10%);
+            padding-left: 25px;
+            border-radius: 8px;
+            font-style: italic;
+
+            font-style: 14px;
+        }
+
+        .btn {
+            padding: 10px;
+
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+                margin-top: 10px;
+
+            }
+        }
+
+    }
+
+}
