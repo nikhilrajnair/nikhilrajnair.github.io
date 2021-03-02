@@ -257,7 +257,7 @@
     flex-direction: column; } }
 
 .blog-one {
-  background-image: url("../../img/blog/blog-banner.jpg");
+  background-image: url("./../img/blog/blog-banner.jpg");
   background-color: #E7F3FF !important;
   background-position: center left;
   background-size: cover;
