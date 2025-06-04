@@ -1,5 +1,6 @@
 ---
 layout: home
+title: ''
 ---
 
 # 👋 Hi, I'm **Nikhil Raj A**
