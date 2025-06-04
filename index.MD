@@ -1,22 +1,49 @@
 ---
 layout: home
-title: Nikhil Raj A - Frontend Engineer
+title: Nikhil Raj A
 ---
 
-# About Me
+# 👋 Hi, I'm **Nikhil Raj A**
 
-Experienced Frontend Developer with 7+ years in Angular, 2+ years in Ember.js, and React/React Native experience.
+Frontend Engineer based in 🇩🇪 Frankfurt, Germany.
 
-# Skills
+- 📧 **Email:** [nikhilrajnair.a@gmail.com](mailto:nikhilrajnair.a@gmail.com)
+- 💼 **LinkedIn:** [linkedin.com/in/nikhilrajnair](https://linkedin.com/in/nikhilrajnair)
+- 💻 **GitHub:** [github.com/nikhilrajnair](https://github.com/nikhilrajnair)
 
-- **JavaScript:** 7+ years (Angular, Ember.js, React, React Native)
-- **HTML & CSS:** Expert
-- **TypeScript:** Advanced
-- **Version Control:** Git, GitHub
-- **Tools:** Jira, Confluence, Agile (SCRUM)
+---
 
-# Contact
+## 🧑‍💻 About
 
-- Email: nikhilrajnair.a@gmail.com
-- LinkedIn: [linkedin.com/in/nikhilrajnair](https://linkedin.com/in/nikhilrajnair)
-- GitHub: [github.com/nikhilrajnair](https://github.com/nikhilrajnair)
+Frontend Engineer with 7+ years of experience developing performant, scalable, and responsive web applications using Angular, Ember.js, and React.
+
+---
+
+## 🛠️ Skills
+
+- ⚡ JavaScript (ES6+), TypeScript, Angular, Ember.js, React
+- 🎨 HTML5, CSS3, SCSS, Responsive Design
+- 🔗 Git, Agile/Scrum, REST APIs
+
+---
+
+## 💼 Experience
+
+**Clark GmbH, Frankfurt, Germany**  
+Frontend Engineer (Aug 2022 – Present)
+
+**Mindtree Pvt. Ltd., Bangalore, India**  
+Module Lead (Aug 2021 – Aug 2022)
+
+**Wellthy Therapeutics Pvt. Ltd., Bangalore, India**  
+Senior Frontend Engineer (Mar 2018 – Jul 2021)
+
+**Codegreen Technologies LLP, Kochi, India**  
+UI Developer (Jan 2016 – Mar 2018)
+
+---
+
+## 🎓 Education
+
+**B.Tech, Electronics and Communication Engineering**  
+(Aug 2011 – Jul 2015)
