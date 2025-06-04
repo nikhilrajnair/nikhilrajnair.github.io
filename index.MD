@@ -11,11 +11,15 @@ Frontend Engineer based in 🇩🇪 Frankfurt, Germany.
 - 💼 **LinkedIn:** [linkedin.com/in/nikhilrajnair](https://linkedin.com/in/nikhilrajnair)
 - 💻 **GitHub:** [github.com/nikhilrajnair](https://github.com/nikhilrajnair)
 
+
+
 ---
 
 ## 🧑‍💻 About
 
 Frontend Engineer with 7+ years of experience developing performant, scalable, and responsive web applications using Angular, Ember.js, and React.
+
+
 
 ---
 
@@ -24,6 +28,8 @@ Frontend Engineer with 7+ years of experience developing performant, scalable, a
 - ⚡ JavaScript (ES6+), TypeScript, Angular, Ember.js, React
 - 🎨 HTML5, CSS3, SCSS, Responsive Design
 - 🔗 Git, Agile/Scrum, REST APIs
+
+
 
 ---
 
@@ -40,6 +46,8 @@ Senior Frontend Engineer (Mar 2018 – Jul 2021)
 
 **Codegreen Technologies LLP, Kochi, India**  
 UI Developer (Jan 2016 – Mar 2018)
+
+
 
 ---
 
