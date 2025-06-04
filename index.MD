@@ -1,6 +1,5 @@
 ---
 layout: home
-title: Nikhil Raj A
 ---
 
 # 👋 Hi, I'm **Nikhil Raj A**
