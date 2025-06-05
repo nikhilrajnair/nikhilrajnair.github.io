@@ -3,4 +3,4 @@ email: nikhilrajnair.a@gmail.com
 description: "Frontend Developer with 7+ years experience in Angular, Ember.js, and React."
 baseurl: "" #
 url: "https://nikhilrajnair.github.io"
-theme: minima
+# theme: minima
