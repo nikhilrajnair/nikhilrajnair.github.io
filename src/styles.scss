@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* ─── Design Tokens ─────────────────────────────── */
+:root {
+	--font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+	--font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+	/* Accent palette */
+	--accent-color: #6c63ff;      /* purple */
+	--accent-secondary: #00d4aa;  /* teal   */
+	--accent-tertiary: #a78bfa;   /* lavender */
+}
+
+/* ─── Dark theme (default) ──────────────────────── */
+:root,
+:root[data-theme='dark'] {
+	--bg-color: #0d0f14;
+	--surface-elevated: #161b27;
+	--text-primary: #e2e8f0;
+	--text-secondary: #b0bac8;
+	--text-muted: #8892a4;
+	--border-color: #252d3f;
+	--card-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* ─── Light theme ───────────────────────────────── */
+:root[data-theme='light'] {
+	--bg-color: #f0f2f8;
+	--surface-elevated: #ffffff;
+	--text-primary: #1a1d2e;
+	--text-secondary: #3a4060;
+	--text-muted: #6b7280;
+	--border-color: #dde2ef;
+	--card-shadow: 0 4px 28px rgba(108, 99, 255, 0.08);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	min-height: 100%;
+	background:
+		radial-gradient(ellipse at -5% -5%, color-mix(in srgb, var(--accent-color) 22%, transparent), transparent 48%),
+		radial-gradient(ellipse at 105% 105%, color-mix(in srgb, var(--accent-secondary) 18%, transparent), transparent 45%),
+		var(--bg-color);
+	color: var(--text-primary);
+	font-family: var(--font-body);
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
