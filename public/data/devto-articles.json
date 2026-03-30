@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Modernizing the Angular Quality Stack: Moving to Vite+",
+    "description": "This didn’t start as a tooling migration—it started with my own curiosity.  Oxlint and Oxfmt were...",
+    "url": "https://dev.to/nikhilrajnair/modernizing-the-angular-quality-stack-moving-to-vite-2d23",
+    "publishedAt": "2026-03-29T14:37:35Z",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz1175x5nlownx9ekxett.png",
+    "tags": [
+      "angular",
+      "performance",
+      "productivity",
+      "tooling"
+    ]
+  }
+]
