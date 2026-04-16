@@ -1,5 +1,17 @@
 [
   {
+    "title": "How I Reduced Micro-Frontend Release Time by Over 50% with Semantic Release on Azure DevOps",
+    "description": "If you've ever been the person manually bumping version numbers, writing changelogs, and tagging...",
+    "url": "https://dev.to/nikhilrajnair/how-i-cut-our-micro-frontend-release-time-by-50-with-semantic-release-on-azure-devops-3m35",
+    "publishedAt": "2026-04-06T02:58:21Z",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F1fdpi7h6zttnyapa75rm.png",
+    "tags": [
+      "productivity",
+      "devops",
+      "automation"
+    ]
+  },
+  {
     "title": "Modernizing the Angular Quality Stack: Moving to Vite+",
     "description": "This didn’t start as a tooling migration—it started with my own curiosity.  Oxlint and Oxfmt were...",
     "url": "https://dev.to/nikhilrajnair/modernizing-the-angular-quality-stack-moving-to-vite-2d23",
