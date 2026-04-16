@@ -2,11 +2,11 @@
   <header class="topbar">
     <a class="brand" href="#top">Nikhil Raj A</a>
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#articles">Articles</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" (click)="trackMenuClick('about')">About</a>
+      <a href="#experience" (click)="trackMenuClick('experience')">Experience</a>
+      <a href="#projects" (click)="trackMenuClick('projects')">Projects</a>
+      <a href="#articles" (click)="trackMenuClick('articles')">Articles</a>
+      <a href="#contact" (click)="trackMenuClick('contact')">Contact</a>
     </nav>
     <button
       type="button"
@@ -27,8 +27,8 @@
           <p class="hero-lead">{{ profile.intro }}</p>
           <p class="hero-summary">{{ profile.summary }}</p>
           <div class="hero-actions">
-            <a [href]="'mailto:' + profile.contact.email" class="btn btn-primary">Email Me</a>
-            <a [href]="profile.contact.linkedin" target="_blank" rel="noreferrer" class="btn btn-secondary">
+            <a [href]="'mailto:' + profile.contact.email" class="btn btn-primary" (click)="trackEmailMeClick()">Email Me</a>
+            <a [href]="profile.contact.linkedin" target="_blank" rel="noreferrer" class="btn btn-secondary" (click)="trackLinkedInClick('hero')">
               LinkedIn
             </a>
           </div>
@@ -138,7 +138,7 @@
               <p class="timeline-meta">{{ article.publishedAt | date: 'mediumDate' }}</p>
               <h3>{{ article.title }}</h3>
               <p>{{ article.description }}</p>
-              <a class="text-link" [href]="article.url" target="_blank" rel="noreferrer">
+              <a class="text-link" [href]="article.url" target="_blank" rel="noreferrer" (click)="trackReadOnDevtoClick(article.url, article.title)">
                 Read on dev.to
               </a>
               <ul class="chip-list">
