@@ -31,6 +31,7 @@ export type DevtoArticle = {
 
 export const profile = {
   name: 'Nikhil Raj Ainchooran',
+  displayName: 'Nikhil Raj',
   role: 'Senior Frontend Engineer',
   location: 'Frankfurt, Germany',
   yearsOfExperience: '9+ years',
