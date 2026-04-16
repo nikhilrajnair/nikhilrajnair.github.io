@@ -110,6 +110,7 @@ export class App implements OnInit {
       persistence: 'localStorage',
       autocapture: true,
       record_sessions_percent: 100,
+      ignore_dnt: true,
     });
   }
 
