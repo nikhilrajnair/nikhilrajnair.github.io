@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject, signal } from '@angular/core';
 import mixpanel from 'mixpanel-browser';
 import { firstValueFrom } from 'rxjs';
 
@@ -14,6 +14,7 @@ import { DevtoArticle, experiences, profile, projects, skillGroups } from './por
 })
 export class App implements OnInit {
   private readonly http = inject(HttpClient);
+  private readonly destroyRef = inject(DestroyRef);
 
   protected readonly profile = profile;
   protected readonly skillGroups = skillGroups;
@@ -22,7 +23,11 @@ export class App implements OnInit {
   protected readonly articles = signal<DevtoArticle[]>([]);
   protected readonly theme = signal<'light' | 'dark'>('dark');
   protected readonly photoLoadError = signal(false);
+  protected readonly activeSection = signal<string>('about');
+  protected readonly showScrollTop = signal(false);
   protected readonly currentYear = new Date().getFullYear();
+
+  private readonly sectionIds = ['about', 'skills', 'experience', 'projects', 'articles', 'contact'];
 
   ngOnInit(): void {
     this.initializeMixpanel();
@@ -30,6 +35,7 @@ export class App implements OnInit {
     this.trackPageView();
     this.initializeTheme();
     void this.loadArticles();
+    this.setupScrollSpy();
   }
 
   protected toggleTheme(): void {
@@ -146,6 +152,29 @@ export class App implements OnInit {
       page_title: document.title,
       user_id: this.getOrCreateUserId(),
     });
+  }
+
+  protected scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  private setupScrollSpy(): void {
+    const onScroll = (): void => {
+      this.showScrollTop.set(window.scrollY > 400);
+
+      const topbarHeight = 80;
+      for (const id of [...this.sectionIds].reverse()) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= topbarHeight) {
+          this.activeSection.set(id);
+          return;
+        }
+      }
+      this.activeSection.set('about');
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    this.destroyRef.onDestroy(() => window.removeEventListener('scroll', onScroll));
   }
 
   private async loadArticles(): Promise<void> {

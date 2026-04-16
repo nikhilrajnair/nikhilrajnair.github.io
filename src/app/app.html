@@ -1,12 +1,13 @@
 <div class="page-frame" id="top">
   <header class="topbar">
-    <a class="brand" href="#top">Nikhil Raj A</a>
+    <a class="brand" href="#top">{{ profile.displayName }}</a>
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#about" (click)="trackMenuClick('about')">About</a>
-      <a href="#experience" (click)="trackMenuClick('experience')">Experience</a>
-      <a href="#projects" (click)="trackMenuClick('projects')">Projects</a>
-      <a href="#articles" (click)="trackMenuClick('articles')">Articles</a>
-      <a href="#contact" (click)="trackMenuClick('contact')">Contact</a>
+      <a href="#about" [class.active]="activeSection() === 'about'" (click)="trackMenuClick('about')">About</a>
+      <a href="#skills" [class.active]="activeSection() === 'skills'" (click)="trackMenuClick('skills')">Skills</a>
+      <a href="#experience" [class.active]="activeSection() === 'experience'" (click)="trackMenuClick('experience')">Experience</a>
+      <a href="#projects" [class.active]="activeSection() === 'projects'" (click)="trackMenuClick('projects')">Projects</a>
+      <a href="#articles" [class.active]="activeSection() === 'articles'" (click)="trackMenuClick('articles')">Articles</a>
+      <a href="#contact" [class.active]="activeSection() === 'contact'" (click)="trackMenuClick('contact')">Contact</a>
     </nav>
     <button
       type="button"
@@ -50,17 +51,17 @@
               <div class="avatar-placeholder" aria-hidden="true">NR</div>
             }
           </div>
-          <p class="visual-caption">Senior Frontend Engineer | Angular, React, Ember</p>
+          <p class="visual-caption">Angular · React · Ember</p>
           <ul class="status-list">
             <li>Open to frontend opportunities</li>
-            <li>Based in Frankfurt</li>
-            <li>Performance, design systems, DX</li>
+            <li>Based in Frankfurt, Germany</li>
+            <li>Focused on performance &amp; design systems</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="skills">
       <div class="section-head">
         <h2>Skills</h2>
         <p>{{ profile.yearsOfExperience }} building reliable frontend products</p>
@@ -129,6 +130,7 @@
     <section class="section" id="articles">
       <div class="section-head">
         <h2>Latest dev.to Articles</h2>
+        <a [href]="profile.contact.devto" target="_blank" rel="noreferrer" class="text-link view-all-link">View all on dev.to →</a>
       </div>
 
       @if (articles().length > 0) {
@@ -179,3 +181,12 @@
     <p>{{ currentYear }} {{ profile.name }}. Built with Angular.</p>
   </footer>
 </div>
+
+@if (showScrollTop()) {
+  <button
+    type="button"
+    class="scroll-top"
+    aria-label="Scroll to top"
+    (click)="scrollToTop()"
+  >↑</button>
+}
