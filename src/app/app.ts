@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject, signal } from '@angular/core';
+import mixpanel from 'mixpanel-browser';
 import { firstValueFrom } from 'rxjs';
 
 import { DevtoArticle, experiences, profile, projects, skillGroups } from './portfolio.data';
@@ -24,6 +25,9 @@ export class App implements OnInit {
   protected readonly currentYear = new Date().getFullYear();
 
   ngOnInit(): void {
+    this.initializeMixpanel();
+    this.identifyUser();
+    this.trackPageView();
     this.initializeTheme();
     void this.loadArticles();
   }
@@ -36,6 +40,50 @@ export class App implements OnInit {
 
   protected onPhotoError(): void {
     this.photoLoadError.set(true);
+  }
+
+  protected trackMenuClick(menuItem: string): void {
+    this.trackEvent('Menu Click', {
+      menu_item: menuItem,
+      page_url: window.location.href,
+      user_id: this.getOrCreateUserId(),
+    });
+  }
+
+  protected trackEmailMeClick(): void {
+    this.trackContactConversion('email');
+    this.trackEvent('CTA Click', {
+      cta_name: 'Email Me',
+      destination: `mailto:${this.profile.contact.email}`,
+      location: 'hero',
+      user_id: this.getOrCreateUserId(),
+    });
+  }
+
+  protected trackLinkedInClick(location: string): void {
+    this.trackEvent('CTA Click', {
+      cta_name: 'LinkedIn',
+      destination: this.profile.contact.linkedin,
+      location,
+      user_id: this.getOrCreateUserId(),
+    });
+  }
+
+  protected trackReadOnDevtoClick(articleUrl: string, articleTitle: string): void {
+    this.trackEvent('Article Click', {
+      cta_text: 'Read on dev.to',
+      article_url: articleUrl,
+      article_title: articleTitle,
+      user_id: this.getOrCreateUserId(),
+    });
+  }
+
+  protected trackContactConversion(channel: string): void {
+    this.trackEvent('Conversion', {
+      'Conversion Type': 'contact_click',
+      'Conversion Value': 1,
+      channel,
+    });
   }
 
   private initializeTheme(): void {
@@ -53,6 +101,50 @@ export class App implements OnInit {
   private applyTheme(theme: 'light' | 'dark'): void {
     document.documentElement.setAttribute('data-theme', theme);
     this.theme.set(theme);
+  }
+
+  private initializeMixpanel(): void {
+    mixpanel.init('b323169855ecb6d28acfb8b93bd4b32f', {
+      debug: true,
+      track_pageview: true,
+      persistence: 'localStorage',
+      autocapture: true,
+      record_sessions_percent: 100,
+    });
+  }
+
+  private identifyUser(): void {
+    const userId = this.getOrCreateUserId();
+    mixpanel.identify(userId);
+    mixpanel.people.set({
+      $name: 'Portfolio Visitor',
+      $email: 'visitor@example.com',
+      plan: 'Free',
+    });
+  }
+
+  private getOrCreateUserId(): string {
+    const key = 'portfolio-user-id';
+    const existing = localStorage.getItem(key);
+    if (existing) {
+      return existing;
+    }
+
+    const created = `anon_${Date.now()}`;
+    localStorage.setItem(key, created);
+    return created;
+  }
+
+  private trackEvent(eventName: string, properties: Record<string, unknown>): void {
+    mixpanel.track(eventName, properties);
+  }
+
+  private trackPageView(): void {
+    this.trackEvent('Page View', {
+      page_url: window.location.href,
+      page_title: document.title,
+      user_id: this.getOrCreateUserId(),
+    });
   }
 
   private async loadArticles(): Promise<void> {
