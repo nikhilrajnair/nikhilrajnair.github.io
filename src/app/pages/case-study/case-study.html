@@ -1,28 +1,122 @@
-<app-container>
-  <article class="page-intro case-study-intro">
-    <a class="back-link" routerLink="/work">← All work</a>
-    <span appBadge>Case study</span>
-    <h1>Project title placeholder.</h1>
-    <p class="lede">The detailed context, technical decisions, and outcomes will be added here.</p>
-    <a appButton variant="secondary" routerLink="/work">Back to selected work</a>
-  </article>
-</app-container>
+<article>
+  <app-container>
+    <header class="case-hero">
+      <a class="back-link" routerLink="/work">← All work</a>
+      <span appBadge>{{ project().type }}</span>
+      <h1>{{ project().title }}</h1>
+      <p class="lede">{{ project().summary }}</p>
+      <dl>
+        <div><dt>Role</dt><dd>{{ project().role }}</dd></div>
+        <div><dt>Format</dt><dd>NDA-safe case study</dd></div>
+      </dl>
+    </header>
 
-<app-section
-  eyebrow="At a glance"
-  heading="The shape of the work."
-  intro="Placeholder metrics establish the reusable case-study layout without inventing a full story."
->
-  <div class="metric-grid">
-    <app-metric-card value="—" label="Outcome metric" detail="Measured result will go here." />
-    <app-metric-card value="—" label="Team context" detail="Roles and collaboration will go here." />
-    <app-metric-card value="—" label="Delivery window" detail="Timeline and constraints will go here." />
-  </div>
-</app-section>
+    <aside class="nda-note" aria-label="Confidentiality note">
+      <strong>Designed for safe publication</strong>
+      <p>Use approved public summaries, ranges, and abstract visuals only. Omit client names, internal screenshots, credentials, account data, and proprietary workflows.</p>
+    </aside>
 
-<app-cta-section
-  heading="Explore the rest of the work."
-  text="More case-study detail will be added once the content is ready."
-  link="/work"
-  linkLabel="View all work"
-/>
+    <div class="story-grid">
+      <section>
+        <p class="eyebrow">Context</p>
+        <h2>Set the scene without naming the client.</h2>
+        <p>{{ template.context }}</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">Problem</p>
+        <h2>Explain the challenge at the right altitude.</h2>
+        <p>{{ template.problem }}</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">My role</p>
+        <h2>Make ownership and collaboration clear.</h2>
+        <p>{{ template.role }}</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">Constraints</p>
+        <h2>Show the boundaries that shaped the work.</h2>
+        <ul>
+          @for (constraint of template.constraints; track constraint) {
+            <li>{{ constraint }}</li>
+          }
+        </ul>
+      </section>
+    </div>
+
+    <section class="story-section">
+      <p class="eyebrow">Approach</p>
+      <h2>Describe the sequence, not confidential implementation detail.</h2>
+      <ol class="approach-list">
+        @for (step of template.approach; track step; let index = $index) {
+          <li><span>{{ index + 1 }}</span><p>{{ step }}</p></li>
+        }
+      </ol>
+    </section>
+
+    <section class="story-section">
+      <p class="eyebrow">Abstract visuals</p>
+      <h2>Communicate structure without product screenshots.</h2>
+      <p class="section-intro">Choose the visual that best supports the story. Every option is deliberately generic and contains no client or product data.</p>
+      <div class="visual-grid">
+        @for (visual of template.visuals; track visual.variant) {
+          <app-case-study-visual [variant]="visual.variant" [heading]="visual.heading" />
+        }
+      </div>
+    </section>
+
+    <section class="story-section">
+      <p class="eyebrow">Key decisions</p>
+      <h2>Make the engineering judgment visible.</h2>
+      <div class="decision-grid">
+        @for (decision of template.decisions; track decision.heading) {
+          <article>
+            <h3>{{ decision.heading }}</h3>
+            <p>{{ decision.text }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <div class="story-grid">
+      <section>
+        <p class="eyebrow">Outcome</p>
+        <h2>Use only approved proof.</h2>
+        <p>{{ project().outcome ?? template.outcome }}</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">What I learned</p>
+        <h2>End with a transferable lesson.</h2>
+        <p>{{ template.learned }}</p>
+      </section>
+    </div>
+
+    <section class="story-section">
+      <p class="eyebrow">Tech stack</p>
+      <h2>List technologies that are safe to publish.</h2>
+      <ul class="stack-list">
+        @for (technology of project().skills; track technology) {
+          <li>{{ technology }}</li>
+        }
+      </ul>
+    </section>
+
+    <section class="story-section related-work">
+      <p class="eyebrow">Related work</p>
+      <h2>Continue with another case study.</h2>
+      <div class="related-grid">
+        @for (related of relatedProjects(); track related.slug) {
+          <a [routerLink]="related.detailPath">
+            <span>{{ related.type }}</span>
+            <strong>{{ related.title }}</strong>
+            <i aria-hidden="true">→</i>
+          </a>
+        }
+      </div>
+      <a appButton variant="secondary" routerLink="/work">View all work</a>
+    </section>
+  </app-container>
+</article>
