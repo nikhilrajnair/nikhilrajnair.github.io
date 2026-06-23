@@ -1,8 +1,51 @@
 <figure>
   <figcaption>{{ heading() }}</figcaption>
 
-  @switch (variant()) {
-    @case ('workflow') {
+  @if (
+    variant() === 'erp-integration' ||
+    variant() === 'analytics-tracking' ||
+    variant() === 'release-pipeline'
+  ) {
+    <ol
+      class="system-flow"
+      [class.erp-flow]="variant() === 'erp-integration'"
+      [class.analytics-flow]="variant() === 'analytics-tracking'"
+      [class.release-flow]="variant() === 'release-pipeline'"
+      [attr.aria-label]="heading()"
+    >
+      @for (item of items(); track item; let index = $index) {
+        <li>
+          <span aria-hidden="true">{{ index + 1 }}</span>
+          <strong>{{ item }}</strong>
+        </li>
+      }
+    </ol>
+  } @else if (variant() === 'insurance-journey') {
+    <div
+      class="journey-comparison"
+      role="group"
+      aria-label="Before and improved journey structure"
+    >
+      <div>
+        <strong class="lane-label">Before structure</strong>
+        <ol class="journey-path journey-before">
+          @for (item of items(); track item) {
+            <li>{{ item }}</li>
+          }
+        </ol>
+      </div>
+      <div>
+        <strong class="lane-label">Improved structure</strong>
+        <ol class="journey-path journey-after">
+          @for (item of items(); track item) {
+            <li>{{ item }}</li>
+          }
+        </ol>
+      </div>
+    </div>
+  } @else {
+    @switch (variant()) {
+      @case ('workflow') {
       <div class="workflow" aria-label="Abstract connected workflow">
         @for (item of items(); track item; let last = $last) {
           <span>{{ item }}</span>
@@ -11,32 +54,33 @@
           }
         }
       </div>
-    }
-    @case ('architecture') {
+      }
+      @case ('architecture') {
       <div class="architecture" aria-label="Abstract architecture with three system layers">
         <span>Experience layer</span>
         <span>Application layer</span>
         <span>Platform layer</span>
       </div>
-    }
-    @case ('component-system') {
+      }
+      @case ('component-system') {
       <div class="component-system" aria-label="Abstract reusable component system">
         <div class="tokens"><i></i><i></i><i></i></div>
         <div class="component-blocks"><span></span><span></span><span></span></div>
       </div>
-    }
-    @case ('before-after') {
+      }
+      @case ('before-after') {
       <div class="before-after" aria-label="Abstract before and after structure comparison">
         <div><strong>Before</strong><i></i><i></i><i></i><i></i></div>
         <div><strong>After</strong><i></i><i></i></div>
       </div>
-    }
-    @case ('metrics') {
+      }
+      @case ('metrics') {
       <div class="metrics" aria-label="Placeholder metrics panel">
         <div><strong>—</strong><span>Baseline</span></div>
         <div><strong>—</strong><span>Outcome</span></div>
         <div><strong>—</strong><span>Confidence</span></div>
       </div>
+      }
     }
   }
 

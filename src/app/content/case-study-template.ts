@@ -1,4 +1,8 @@
 export type CaseStudyVisualVariant =
+  | 'erp-integration'
+  | 'analytics-tracking'
+  | 'release-pipeline'
+  | 'insurance-journey'
   | 'workflow'
   | 'architecture'
   | 'component-system'
@@ -22,6 +26,35 @@ export type CaseStudyContent = {
     items: readonly string[];
   }[];
 };
+
+export const caseStudyVisuals = {
+  erpIntegration: {
+    variant: 'erp-integration',
+    heading: 'ERP integration workflow',
+    items: ['Product setup', 'Connector flow', 'ERP system', 'Connection dashboard'],
+  },
+  productAnalytics: {
+    variant: 'analytics-tracking',
+    heading: 'Product analytics tracking flow',
+    items: [
+      'UI interaction',
+      'Tracking directive',
+      'Analytics service',
+      'Mixpanel event',
+      'Dashboard insight',
+    ],
+  },
+  releaseAutomation: {
+    variant: 'release-pipeline',
+    heading: 'Release automation pipeline',
+    items: ['Code change', 'CI checks', 'Playwright E2E', 'Versioned release', 'Deployment'],
+  },
+  insuranceJourney: {
+    variant: 'insurance-journey',
+    heading: 'Insurance app journey improvement',
+    items: ['Entry', 'Guided steps', 'Validation', 'Completion'],
+  },
+} as const satisfies Record<string, CaseStudyContent['visuals'][number]>;
 
 export const caseStudyTemplate: CaseStudyContent = {
   summary:
@@ -127,13 +160,7 @@ export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
       'Playwright',
       'Azure DevOps',
     ],
-    visuals: [
-      {
-        variant: 'workflow',
-        heading: 'ERP connection workflow',
-        items: ['Product setup', 'Workato connector', 'ERP system', 'Connection dashboard'],
-      },
-    ],
+    visuals: [caseStudyVisuals.erpIntegration],
   },
   'product-analytics-foundation': {
     summary:
@@ -183,18 +210,6 @@ export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
       'Custom Angular directive',
       'Product analytics dashboards',
     ],
-    visuals: [
-      {
-        variant: 'workflow',
-        heading: 'Product event tracking flow',
-        items: [
-          'UI interaction',
-          'Tracking directive',
-          'Analytics service',
-          'Mixpanel event',
-          'Dashboard insight',
-        ],
-      },
-    ],
+    visuals: [caseStudyVisuals.productAnalytics],
   },
 };
