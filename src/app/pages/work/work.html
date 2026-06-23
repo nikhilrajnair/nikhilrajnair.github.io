@@ -26,7 +26,7 @@
   heading="More systems I’ve built and led."
   intro="A broader view of product, platform, open-source, and enterprise work."
 >
-  <div class="card-grid secondary-grid">
+  <div id="selected-projects" class="card-grid secondary-grid">
     @for (project of secondaryProjects; track project.slug) {
       <app-project-card [project]="project" compact />
     }

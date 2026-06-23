@@ -1,14 +1,16 @@
 import { TestBed } from '@angular/core/testing';
-import { provideRouter } from '@angular/router';
+import { provideRouter, Router, withComponentInputBinding } from '@angular/router';
+import { RouterTestingHarness } from '@angular/router/testing';
 import { App } from './app';
-import { caseStudies, caseStudyVisuals } from './content/case-study-template';
+import { routes } from './app.routes';
+import { caseStudyVisuals } from './content/case-study-template';
 import { projects, secondaryProjects } from './content/projects';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
-      providers: [provideRouter([])],
+      providers: [provideRouter(routes, withComponentInputBinding())],
     }).compileComponents();
   });
 
@@ -27,10 +29,8 @@ describe('App', () => {
     expect(compiled.querySelector('app-site-footer')).toBeTruthy();
   });
 
-  it('should only link published case studies', () => {
-    const linkedProjects = projects.filter((project) => project.detailPath);
-
-    expect(linkedProjects.every((project) => caseStudies[project.slug])).toBeTrue();
+  it('should link every case study through the existing detail route', () => {
+    expect(projects.every((project) => project.detailPath === `/work/${project.slug}`)).toBeTrue();
   });
 
   it('should define all NDA-safe visual presets', () => {
@@ -51,5 +51,31 @@ describe('App', () => {
     expect(covers.every((project) => !project.coverImage?.includes('public/'))).toBeTrue();
     expect(covers.every((project) => !project.coverImage?.includes('src/assets/'))).toBeTrue();
     expect(covers.every((project) => project.coverAlt?.trim())).toBeTrue();
+  });
+
+  it('should render working labels and routes for every portfolio card', async () => {
+    const harness = await RouterTestingHarness.create();
+    const router = TestBed.inject(Router);
+    await harness.navigateByUrl('/work');
+
+    const cardLinks = Array.from(
+      harness.routeNativeElement?.querySelectorAll<HTMLAnchorElement>('app-project-card a') ?? [],
+    );
+    expect(
+      cardLinks
+        .slice(0, projects.length)
+        .every((link) => link.textContent?.trim() === 'View case study'),
+    ).toBeTrue();
+    expect(
+      cardLinks
+        .slice(projects.length)
+        .every((link) => link.textContent?.trim().startsWith('View project')),
+    ).toBeTrue();
+    expect(cardLinks.every((link) => link.getAttribute('href'))).toBeTrue();
+
+    for (const project of projects) {
+      await harness.navigateByUrl(project.detailPath!);
+      expect(router.url).toBe(project.detailPath!);
+    }
   });
 });

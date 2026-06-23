@@ -54,6 +54,7 @@ export const projects: readonly Project[] = [
     coverImage: 'images/case-studies/frontend-quality-release-automation.webp',
     coverAlt:
       'Abstract release automation workflow showing code commit, build, E2E test, quality gate, deployment, and release metrics.',
+    detailPath: '/work/frontend-quality-release-automation',
   },
   {
     slug: 'insurance-user-journeys',
@@ -67,6 +68,7 @@ export const projects: readonly Project[] = [
     coverImage: 'images/case-studies/insurance-app-user-journey.webp',
     coverAlt:
       'Abstract mobile insurance app journey showing onboarding, policy overview, support access, and product impact metrics.',
+    detailPath: '/work/insurance-user-journeys',
   },
 ];
 
