@@ -97,7 +97,6 @@ h3 {
 }
 
 h1 {
-  max-width: 16ch;
   font-size: var(--font-size-2xl);
 }
 
@@ -157,7 +156,7 @@ button {
 }
 
 .hero h1 {
-  max-width: 16ch;
+  max-width: 46ch;
   margin-block: var(--space-4) var(--space-5);
   font-size: var(--font-size-display);
   line-height: var(--line-height-display);
@@ -258,7 +257,8 @@ button {
   max-width: var(--content-copy);
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--space-8);
+  gap: var(--space-4);
+  flex-direction: column;
 }
 
 .about-preview p {
