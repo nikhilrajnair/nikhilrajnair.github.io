@@ -28,4 +28,15 @@ li {
   background: var(--color-surface);
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+  cursor: default;
+  transition:
+    border-color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+li:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  background: color-mix(in srgb, var(--color-accent) 5%, var(--color-surface));
+  color: var(--color-text);
 }

@@ -7,8 +7,9 @@ article {
   height: 100%;
   padding: var(--space-5);
   border: 1px solid var(--color-border);
+  border-top: 3px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background: linear-gradient(145deg, #ffffff, color-mix(in srgb, var(--color-accent) 4%, #ffffff));
   box-shadow: var(--shadow-xs);
 }
 

@@ -7,9 +7,9 @@
         <p>{{ text() }}</p>
       </div>
       @if (external()) {
-        <a appButton [href]="link()">{{ linkLabel() }}</a>
+        <a appButton variant="secondary" [href]="link()">{{ linkLabel() }}</a>
       } @else {
-        <a appButton [routerLink]="link()">{{ linkLabel() }}</a>
+        <a appButton variant="secondary" [routerLink]="link()">{{ linkLabel() }}</a>
       }
     </div>
   </app-container>
