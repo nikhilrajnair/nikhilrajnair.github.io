@@ -90,6 +90,7 @@ h2,
 h3 {
   line-height: var(--line-height-tight);
   letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 h1 {
@@ -136,6 +137,7 @@ button {
   max-width: var(--content-copy);
   color: var(--color-text-muted);
   font-size: var(--font-size-lg);
+  text-wrap: pretty;
 }
 
 .hero {
