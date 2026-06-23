@@ -8,7 +8,12 @@
   <h2>{{ article().title }}</h2>
   <p>{{ article().summary }}</p>
   @if (article().url; as url) {
-    <a [href]="url" target="_blank" rel="noreferrer">
+    <a
+      [href]="url"
+      target="_blank"
+      rel="noreferrer"
+      [attr.aria-label]="'Read ' + article().title + ' (opens in a new tab)'"
+    >
       Read article <span aria-hidden="true">↗</span>
     </a>
   }
