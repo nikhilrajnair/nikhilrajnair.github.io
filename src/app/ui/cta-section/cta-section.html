@@ -6,7 +6,11 @@
         <h2>{{ heading() }}</h2>
         <p>{{ text() }}</p>
       </div>
-      <a appButton [routerLink]="link()">{{ linkLabel() }}</a>
+      @if (external()) {
+        <a appButton [href]="link()">{{ linkLabel() }}</a>
+      } @else {
+        <a appButton [routerLink]="link()">{{ linkLabel() }}</a>
+      }
     </div>
   </app-container>
 </section>

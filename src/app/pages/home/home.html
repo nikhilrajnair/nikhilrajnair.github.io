@@ -1,45 +1,85 @@
 <app-container>
   <section class="hero" aria-labelledby="home-title">
     <span appBadge>Senior Frontend Engineer</span>
-    <h1 id="home-title">I build clear, resilient product experiences.</h1>
+    <h1 id="home-title">Nikhil Raj Ainchooran</h1>
     <p class="lede">
-      Product-minded frontend engineering with a focus on scalable architecture, accessible
-      interfaces, and teams that ship with confidence.
+      I build scalable frontend systems, product experiences, analytics foundations, and reliable
+      web applications across B2B SaaS, insurance, healthcare, and enterprise domains.
     </p>
     <div class="actions">
-      <a appButton routerLink="/work">View selected work</a>
-      <a appButton variant="secondary" routerLink="/about">More about me</a>
+      <a appButton routerLink="/work">View Work</a>
+      <a appButton variant="secondary" routerLink="/writing">Read Writing</a>
+      <a appButton variant="secondary" href="mailto:nikhilrajnair.a@gmail.com">Contact Me</a>
     </div>
   </section>
 </app-container>
 
 <app-section
-  eyebrow="Selected work"
-  heading="Engineering decisions, made visible."
-  intro="A small collection of product work framed around context, constraints, and outcomes."
+  eyebrow="Proof of impact"
+  heading="Built in production, measured in outcomes."
+  intro="A few signals from the systems, workflows, and teams I’ve supported."
 >
-  <div class="content-stack">
+  <div class="metric-grid">
+    <app-metric-card value="9+" label="Years of frontend engineering experience" />
+    <app-metric-card value="5+" label="Enterprise clients supported through ERP integrations" />
+    <app-metric-card value="30%+" label="Improved release confidence through Playwright E2E testing" />
+    <app-metric-card value="~50%" label="Reduced release cycle time through automation" />
+  </div>
+</app-section>
+
+<app-section
+  eyebrow="Selected case studies"
+  heading="Product problems, solved with frontend systems."
+  intro="Selected work across platform architecture, analytics, delivery quality, and user journeys."
+>
+  <div class="card-grid home-projects">
     @for (project of projects; track project.slug) {
-      <app-case-study-card [project]="project" />
+      <app-project-card [project]="project" />
     }
   </div>
 </app-section>
 
 <app-section
-  eyebrow="Approach"
-  heading="Useful software is a team outcome."
-  intro="Strong frontend work connects product judgment, technical quality, and delivery."
+  eyebrow="What I work on"
+  heading="The useful parts of modern frontend engineering."
 >
-  <div class="metric-grid">
-    <app-metric-card value="9+" label="Years building for the web" detail="Across product teams and platforms." />
-    <app-metric-card value="A11y" label="Part of the default" detail="Semantic, usable, and keyboard friendly." />
-    <app-metric-card value="End to end" label="From design to release" detail="Architecture, implementation, testing, and rollout." />
+  <ul class="focus-grid">
+    @for (area of workAreas; track area) {
+      <li>{{ area }}</li>
+    }
+  </ul>
+</app-section>
+
+<app-section
+  eyebrow="Writing"
+  heading="Notes from the work."
+  intro="Practical lessons on frontend delivery, tooling, and architecture."
+>
+  <div class="writing-list writing-preview">
+    @for (article of writings; track article.slug) {
+      <app-writing-card [article]="article" />
+    }
+  </div>
+  <a appButton variant="secondary" routerLink="/writing">Read all writing</a>
+</app-section>
+
+<app-section
+  eyebrow="About"
+  heading="Product judgment, backed by engineering depth."
+>
+  <div class="about-preview">
+    <p>
+      I work across design, architecture, implementation, testing, and delivery to make complex
+      product experiences feel dependable and clear.
+    </p>
+    <a appButton variant="secondary" routerLink="/about">More about me</a>
   </div>
 </app-section>
 
 <app-cta-section
   heading="Have a frontend problem worth solving?"
   text="I’m interested in product-focused teams that value clarity, quality, and pragmatic engineering."
-  link="/about"
-  linkLabel="Learn how I work"
+  link="mailto:nikhilrajnair.a@gmail.com"
+  linkLabel="Contact Me"
+  external
 />
