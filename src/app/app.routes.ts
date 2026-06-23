@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { projects } from './content/projects';
 import { Home } from './pages/home/home';
 
 export const routes: Routes = [
@@ -11,7 +12,8 @@ export const routes: Routes = [
   {
     path: 'work/:slug',
     loadComponent: () => import('./pages/case-study/case-study').then((page) => page.CaseStudy),
-    title: 'Case Study — Nikhil Raj',
+    title: ({ params }) =>
+      `${projects.find((project) => project.slug === params['slug'])?.title ?? 'Case Study'} — Nikhil Raj`,
   },
   {
     path: 'writing',

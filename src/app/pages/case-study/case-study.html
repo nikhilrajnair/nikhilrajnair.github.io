@@ -12,32 +12,32 @@
     </header>
 
     <aside class="nda-note" aria-label="Confidentiality note">
-      <strong>Designed for safe publication</strong>
-      <p>Use approved public summaries, ranges, and abstract visuals only. Omit client names, internal screenshots, credentials, account data, and proprietary workflows.</p>
+      <strong>NDA-safe presentation</strong>
+      <p>This case study uses approved public summaries and abstract visuals. Client names, internal screenshots, account data, and proprietary workflows are intentionally omitted.</p>
     </aside>
 
     <div class="story-grid">
       <section>
         <p class="eyebrow">Context</p>
-        <h2>Set the scene without naming the client.</h2>
+        <h2>Product context</h2>
         <p>{{ content().context }}</p>
       </section>
 
       <section>
         <p class="eyebrow">Problem</p>
-        <h2>Explain the challenge at the right altitude.</h2>
+        <h2>The challenge</h2>
         <p>{{ content().problem }}</p>
       </section>
 
       <section>
         <p class="eyebrow">My role</p>
-        <h2>Make ownership and collaboration clear.</h2>
+        <h2>Scope and ownership</h2>
         <p>{{ content().role }}</p>
       </section>
 
       <section>
         <p class="eyebrow">Constraints</p>
-        <h2>Show the boundaries that shaped the work.</h2>
+        <h2>What shaped the work</h2>
         <ul>
           @for (constraint of content().constraints; track constraint) {
             <li>{{ constraint }}</li>
@@ -48,7 +48,7 @@
 
     <section class="story-section">
       <p class="eyebrow">Approach</p>
-      <h2>Describe the sequence, not confidential implementation detail.</h2>
+      <h2>How I approached it</h2>
       <ol class="approach-list">
         @for (step of content().approach; track step; let index = $index) {
           <li><span>{{ index + 1 }}</span><p>{{ step }}</p></li>
@@ -58,8 +58,8 @@
 
     <section class="story-section">
       <p class="eyebrow">Abstract visuals</p>
-      <h2>Communicate structure without product screenshots.</h2>
-      <p class="section-intro">Choose the visual that best supports the story. Every option is deliberately generic and contains no client or product data.</p>
+      <h2>System flow at a glance</h2>
+      <p class="section-intro">A deliberately abstract view of the system, with no client or product data.</p>
       <div class="visual-grid">
         @for (visual of content().visuals; track visual.variant) {
           <app-case-study-visual
@@ -73,7 +73,7 @@
 
     <section class="story-section">
       <p class="eyebrow">Key decisions</p>
-      <h2>Make the engineering judgment visible.</h2>
+      <h2>Decisions that shaped the solution</h2>
       <div class="decision-grid">
         @for (decision of content().decisions; track decision.heading) {
           <article>
@@ -87,7 +87,7 @@
     <div class="story-grid">
       <section>
         <p class="eyebrow">Outcome</p>
-        <h2>Use only approved proof.</h2>
+        <h2>Impact and evidence</h2>
         <ul class="impact-list">
           @for (outcome of content().outcomes; track outcome) {
             <li>{{ outcome }}</li>
@@ -97,14 +97,14 @@
 
       <section>
         <p class="eyebrow">What I learned</p>
-        <h2>End with a transferable lesson.</h2>
+        <h2>A transferable lesson</h2>
         <p>{{ content().learned }}</p>
       </section>
     </div>
 
     <section class="story-section">
       <p class="eyebrow">Tech stack</p>
-      <h2>List technologies that are safe to publish.</h2>
+      <h2>Tools used</h2>
       <ul class="stack-list">
         @for (technology of content().tech; track technology) {
           <li>{{ technology }}</li>
@@ -114,7 +114,7 @@
 
     <section class="story-section related-work">
       <p class="eyebrow">Related work</p>
-      <h2>Continue with another case study.</h2>
+      <h2>Continue exploring</h2>
       <div class="related-grid">
         @for (related of relatedProjects(); track related.slug) {
           <a [routerLink]="related.detailPath">

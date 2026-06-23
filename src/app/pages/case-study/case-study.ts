@@ -30,6 +30,10 @@ export class CaseStudy {
     () => projects.find((project) => project.slug === this.slug()) ?? placeholderProject,
   );
   protected readonly relatedProjects = computed(() =>
-    projects.filter((project) => project.slug !== this.project().slug).slice(0, 3),
+    projects
+      .filter(
+        (project) => project.slug !== this.project().slug && Boolean(caseStudies[project.slug]),
+      )
+      .slice(0, 3),
   );
 }

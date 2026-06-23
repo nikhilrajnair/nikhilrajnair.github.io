@@ -1,6 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { App } from './app';
+import { caseStudies } from './content/case-study-template';
+import { projects } from './content/projects';
 
 describe('App', () => {
   beforeEach(async () => {
@@ -23,5 +25,11 @@ describe('App', () => {
     expect(compiled.querySelector('app-site-header')).toBeTruthy();
     expect(compiled.querySelector('main')).toBeTruthy();
     expect(compiled.querySelector('app-site-footer')).toBeTruthy();
+  });
+
+  it('should only link published case studies', () => {
+    const linkedProjects = projects.filter((project) => project.detailPath);
+
+    expect(linkedProjects.every((project) => caseStudies[project.slug])).toBeTrue();
   });
 });

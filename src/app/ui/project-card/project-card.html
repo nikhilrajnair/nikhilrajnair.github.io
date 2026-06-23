@@ -38,7 +38,14 @@
   @if (project().detailPath) {
     <a appButton variant="secondary" [routerLink]="project().detailPath">View case study</a>
   } @else if (project().externalUrl) {
-    <a appButton variant="secondary" [href]="project().externalUrl" target="_blank" rel="noreferrer">
+    <a
+      appButton
+      variant="secondary"
+      [href]="project().externalUrl"
+      target="_blank"
+      rel="noreferrer"
+      [attr.aria-label]="'View ' + project().title + ' (opens in a new tab)'"
+    >
       View project <span aria-hidden="true">↗</span>
     </a>
   }
