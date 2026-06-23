@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { booleanAttribute, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Button } from '../button/button';
 import { Container } from '../container/container';
@@ -14,4 +14,5 @@ export class CtaSection {
   readonly text = input.required<string>();
   readonly link = input('/work');
   readonly linkLabel = input('View my work');
+  readonly external = input(false, { transform: booleanAttribute });
 }
