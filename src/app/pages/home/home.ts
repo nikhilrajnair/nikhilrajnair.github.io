@@ -28,7 +28,7 @@ import { WritingCard } from '../../ui/writing-card/writing-card';
 })
 export class Home {
   protected readonly projects = projects;
-  protected readonly writings = writings;
+  protected readonly writings = writings.slice(0, 2);
   protected readonly workAreas = [
     'Frontend architecture',
     'Angular and TypeScript applications',

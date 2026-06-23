@@ -135,4 +135,66 @@ export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
       },
     ],
   },
+  'product-analytics-foundation': {
+    summary:
+      'Built a scalable product analytics foundation using Mixpanel, reusable Angular tracking tooling, and stakeholder dashboards to support data-driven product decisions.',
+    context:
+      'The work established a shared frontend analytics foundation across key product flows and connected implementation standards with stakeholder-facing dashboards.',
+    problem:
+      'Product teams needed consistent event tracking and better visibility into user behavior, funnels, and drop-off points.',
+    role:
+      'Designed the frontend tracking architecture, created reusable Angular tooling, defined tracking standards, and supported dashboard setup with stakeholders.',
+    constraints: [
+      'Tracking needed to stay consistent across different UI interactions and product flows.',
+      'The Angular integration needed to be reusable instead of coupling analytics logic to individual components.',
+      'Event data needed to remain understandable to stakeholders using product funnels and dashboards.',
+    ],
+    approach: [
+      'Created a reusable Angular tracking directive for UI interactions.',
+      'Standardized event naming and tracking structure.',
+      'Integrated tracking into key product flows.',
+      'Helped stakeholders understand product funnels and behavior patterns.',
+      'Documented the approach for reuse across projects.',
+    ],
+    decisions: [
+      {
+        heading: 'Keep tracking declarative',
+        text: 'A reusable Angular directive made UI tracking consistent while keeping analytics calls out of individual component logic.',
+      },
+      {
+        heading: 'Standardize the event contract',
+        text: 'Shared naming and event structure gave product flows a consistent analytics vocabulary.',
+      },
+      {
+        heading: 'Connect instrumentation to insight',
+        text: 'Dashboard setup and stakeholder collaboration kept tracking focused on funnels, behavior patterns, and useful product questions.',
+      },
+    ],
+    outcomes: [
+      'Enabled more consistent analytics implementation.',
+      'Helped product teams make better decisions based on user behavior.',
+    ],
+    learned:
+      'Analytics tooling becomes more valuable when implementation standards and stakeholder interpretation are designed together, rather than treating event collection as the final step.',
+    tech: [
+      'Angular',
+      'TypeScript',
+      'Mixpanel',
+      'Custom Angular directive',
+      'Product analytics dashboards',
+    ],
+    visuals: [
+      {
+        variant: 'workflow',
+        heading: 'Product event tracking flow',
+        items: [
+          'UI interaction',
+          'Tracking directive',
+          'Analytics service',
+          'Mixpanel event',
+          'Dashboard insight',
+        ],
+      },
+    ],
+  },
 };
