@@ -13,20 +13,25 @@ section {
   justify-content: space-between;
   gap: var(--space-8);
   padding: clamp(var(--space-6), 6vw, var(--space-12));
-  border: 1px solid color-mix(in srgb, var(--color-accent) 16%, var(--color-border));
+  border: 1px solid transparent;
   border-radius: var(--radius-xl);
-  background: color-mix(in srgb, var(--color-accent) 4%, var(--color-surface));
-  box-shadow: var(--shadow-sm);
+  background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
+  box-shadow: var(--shadow-md);
+}
+
+.panel .eyebrow {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 h2 {
   max-width: 20ch;
   margin-block: var(--space-3) var(--space-4);
+  color: #ffffff;
 }
 
 .panel p:last-child {
   max-width: 40rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 a {
