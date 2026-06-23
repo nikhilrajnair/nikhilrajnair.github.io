@@ -1,14 +1,14 @@
 export const skillGroups = [
   {
-    heading: 'Frontend engineering',
-    skills: ['Angular', 'TypeScript', 'React', 'Ember.js', 'RxJS'],
+    heading: 'Core frontend',
+    skills: ['Angular', 'TypeScript', 'RxJS', 'React', 'Ember.js'],
   },
   {
-    heading: 'Product quality',
-    skills: ['Accessibility', 'Performance', 'Playwright', 'Design systems'],
+    heading: 'Quality and systems',
+    skills: ['Design systems', 'Accessibility', 'Performance', 'Playwright', 'Storybook'],
   },
   {
-    heading: 'Delivery',
-    skills: ['Storybook', 'CI/CD', 'Semantic Release', 'Technical leadership'],
+    heading: 'Product and delivery',
+    skills: ['Mixpanel', 'REST APIs', 'CI/CD', 'Azure DevOps', 'AI-assisted workflows'],
   },
 ] as const;

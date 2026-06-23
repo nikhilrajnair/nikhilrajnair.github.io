@@ -1,16 +1,53 @@
 <app-container>
   <header class="page-intro">
     <p class="eyebrow">About</p>
-    <h1>Engineering with product judgment.</h1>
+    <h1>I build frontend systems that make complex products feel clear.</h1>
     <p class="lede">
-      I work where interface design, frontend architecture, and delivery meet—turning complex
-      product needs into calm, maintainable experiences.
+      I’m a Senior Frontend Engineer based in Frankfurt am Main with 9+ years of experience
+      across B2B SaaS, insurance, healthcare, fintech, and enterprise applications.
     </p>
   </header>
 </app-container>
 
 <app-section
-  eyebrow="Capabilities"
+  eyebrow="How I work"
+  heading="Clear thinking, steady delivery."
+  intro="I like difficult product problems, especially when the interface needs to make a complicated system understandable."
+>
+  <div class="principle-grid">
+    <article>
+      <h3>Start with the problem</h3>
+      <p>I begin with the user journey, the constraints, and the decision the product needs to support.</p>
+    </article>
+    <article>
+      <h3>Build for the team</h3>
+      <p>I prefer readable code, useful documentation, and reusable patterns only where repetition earns them.</p>
+    </article>
+    <article>
+      <h3>Make quality visible</h3>
+      <p>Testing, analytics, and release feedback are part of the product—not tasks left until the end.</p>
+    </article>
+  </div>
+</app-section>
+
+<app-section eyebrow="Technical strengths" heading="Frontend depth, applied pragmatically.">
+  <ul class="focus-grid">
+    @for (strength of technicalStrengths; track strength) {
+      <li>{{ strength }}</li>
+    }
+  </ul>
+</app-section>
+
+<app-section eyebrow="Product strengths" heading="Engineering beyond the component boundary.">
+  <ul class="focus-grid">
+    @for (strength of productStrengths; track strength) {
+      <li>{{ strength }}</li>
+    }
+  </ul>
+</app-section>
+
+<app-section
+  eyebrow="Tools and technologies"
   heading="A practical frontend toolkit."
   intro="Tools change. The useful part is knowing which trade-off a product actually needs."
 >
@@ -21,9 +58,24 @@
   </div>
 </app-section>
 
+<app-section
+  eyebrow="Selected experience"
+  heading="Experience across products with real operational weight."
+>
+  <div class="experience-list">
+    @for (item of experience; track item.heading) {
+      <article>
+        <h3>{{ item.heading }}</h3>
+        <p>{{ item.text }}</p>
+      </article>
+    }
+  </div>
+</app-section>
+
 <app-cta-section
-  heading="Let’s make the complicated feel simple."
-  text="If you’re building a thoughtful product and care about the frontend foundation, I’d be glad to hear about it."
-  link="/work"
-  linkLabel="See selected work"
+  heading="Working on a product problem worth untangling?"
+  text="I’m interested in senior frontend roles where product thinking, technical quality, and thoughtful collaboration matter."
+  link="mailto:nikhilrajnair.a@gmail.com"
+  linkLabel="Contact me"
+  external
 />
