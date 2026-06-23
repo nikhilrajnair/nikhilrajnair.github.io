@@ -42,4 +42,13 @@ describe('App', () => {
     ]);
     expect(Object.values(caseStudyVisuals).every((visual) => visual.items.length > 0)).toBeTrue();
   });
+
+  it('should use accessible public-folder paths for case study covers', () => {
+    const covers = projects.flatMap((project) => (project.coverImage ? [project.coverImage] : []));
+
+    expect(covers.length).toBe(4);
+    expect(covers.every((cover) => cover.path.startsWith('images/case-studies/'))).toBeTrue();
+    expect(covers.every((cover) => !cover.path.includes('public/'))).toBeTrue();
+    expect(covers.every((cover) => cover.alt.trim().length > 0)).toBeTrue();
+  });
 });
