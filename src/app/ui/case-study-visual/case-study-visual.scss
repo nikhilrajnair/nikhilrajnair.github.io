@@ -1,0 +1,174 @@
+:host {
+  display: block;
+}
+
+figure {
+  height: 100%;
+  margin: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+}
+
+figcaption {
+  margin-bottom: var(--space-5);
+  font-weight: var(--font-weight-semibold);
+}
+
+figure > p {
+  margin-top: var(--space-4);
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-xs);
+}
+
+.workflow,
+.architecture,
+.component-system,
+.before-after,
+.metrics {
+  min-height: 10rem;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-subtle);
+}
+
+.workflow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.workflow span,
+.architecture span {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+.workflow i {
+  width: var(--space-4);
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.architecture {
+  display: grid;
+  gap: var(--space-2);
+  align-content: center;
+}
+
+.architecture span:nth-child(2) {
+  margin-inline: var(--space-5);
+  border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-border));
+}
+
+.component-system {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: var(--space-3);
+}
+
+.tokens,
+.component-blocks {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.tokens i,
+.component-blocks span,
+.before-after i {
+  display: block;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.tokens i {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface));
+}
+
+.component-blocks span:first-child {
+  height: 2.5rem;
+}
+
+.component-blocks span:not(:first-child) {
+  min-height: 3rem;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.before-after div {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.before-after strong {
+  font-size: var(--font-size-xs);
+}
+
+.before-after i {
+  min-height: 1.5rem;
+}
+
+.before-after div:last-child i {
+  min-height: 3.5rem;
+  border-color: color-mix(in srgb, var(--color-accent) 32%, var(--color-border));
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.metrics div {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.metrics strong,
+.metrics span {
+  display: block;
+}
+
+.metrics strong {
+  color: var(--color-accent);
+  font-size: var(--font-size-xl);
+}
+
+.metrics span {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+@media (max-width: 34rem) {
+  .workflow {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .workflow i {
+    width: 1px;
+    height: var(--space-3);
+    align-self: center;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}

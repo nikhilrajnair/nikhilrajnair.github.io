@@ -1,0 +1,40 @@
+<figure>
+  <figcaption>{{ heading() }}</figcaption>
+
+  @switch (variant()) {
+    @case ('workflow') {
+      <div class="workflow" aria-label="Abstract workflow with four connected stages">
+        <span>Input</span><i aria-hidden="true"></i><span>Decision</span><i aria-hidden="true"></i
+        ><span>Action</span><i aria-hidden="true"></i><span>Feedback</span>
+      </div>
+    }
+    @case ('architecture') {
+      <div class="architecture" aria-label="Abstract architecture with three system layers">
+        <span>Experience layer</span>
+        <span>Application layer</span>
+        <span>Platform layer</span>
+      </div>
+    }
+    @case ('component-system') {
+      <div class="component-system" aria-label="Abstract reusable component system">
+        <div class="tokens"><i></i><i></i><i></i></div>
+        <div class="component-blocks"><span></span><span></span><span></span></div>
+      </div>
+    }
+    @case ('before-after') {
+      <div class="before-after" aria-label="Abstract before and after structure comparison">
+        <div><strong>Before</strong><i></i><i></i><i></i><i></i></div>
+        <div><strong>After</strong><i></i><i></i></div>
+      </div>
+    }
+    @case ('metrics') {
+      <div class="metrics" aria-label="Placeholder metrics panel">
+        <div><strong>—</strong><span>Baseline</span></div>
+        <div><strong>—</strong><span>Outcome</span></div>
+        <div><strong>—</strong><span>Confidence</span></div>
+      </div>
+    }
+  }
+
+  <p>Abstract placeholder — replace only with approved, non-confidential information.</p>
+</figure>
