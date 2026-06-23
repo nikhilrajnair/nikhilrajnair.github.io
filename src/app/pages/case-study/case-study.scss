@@ -4,13 +4,13 @@
 
 .case-hero {
   display: grid;
-  max-width: 52rem;
+  // max-width: 52rem;
   gap: var(--space-5);
   padding-block: clamp(var(--space-12), 10vw, var(--space-24));
 }
 
 .case-hero h1 {
-  max-width: 16ch;
+  // max-width: 16ch;
   font-size: var(--font-size-display);
 }
 
@@ -205,7 +205,7 @@ dd {
 
 .related-grid a {
   display: grid;
-  min-height: 9rem;
+  // min-height: 9rem;
   grid-template-columns: 1fr auto;
   gap: var(--space-2);
   padding: var(--space-5);

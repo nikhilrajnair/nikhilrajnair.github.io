@@ -9,5 +9,5 @@ import { WritingCard } from '../../ui/writing-card/writing-card';
   templateUrl: './writing.html',
 })
 export class Writing {
-  protected readonly writings = writings;
+  protected readonly writings = writings.filter((article) => article.published !== 'Coming soon');
 }
