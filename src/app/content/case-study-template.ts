@@ -5,7 +5,27 @@ export type CaseStudyVisualVariant =
   | 'before-after'
   | 'metrics';
 
-export const caseStudyTemplate = {
+export type CaseStudyContent = {
+  summary: string;
+  context: string;
+  problem: string;
+  role: string;
+  constraints: readonly string[];
+  approach: readonly string[];
+  decisions: readonly { heading: string; text: string }[];
+  outcomes: readonly string[];
+  learned: string;
+  tech: readonly string[];
+  visuals: readonly {
+    variant: CaseStudyVisualVariant;
+    heading: string;
+    items: readonly string[];
+  }[];
+};
+
+export const caseStudyTemplate: CaseStudyContent = {
+  summary:
+    'A reusable structure for explaining product and engineering work without confidential details.',
   context:
     'Describe the product area and audience using only approved, public information. Keep client and account names out unless publication is explicitly permitted.',
   problem:
@@ -36,16 +56,83 @@ export const caseStudyTemplate = {
       text: 'Summarize how accessibility, performance, observability, and testing shaped delivery.',
     },
   ],
-  outcome:
+  outcomes: [
     'Add an approved result here. Prefer a verified metric, a range, or a qualitative proof point; omit anything that cannot be published.',
+  ],
   learned:
     'Capture one reusable lesson about the product, system, or collaboration model without revealing internal incidents or decisions.',
-  fallbackStack: ['Approved framework', 'Approved tooling', 'Approved platform'],
+  tech: ['Approved framework', 'Approved tooling', 'Approved platform'],
   visuals: [
-    { variant: 'workflow' as const, heading: 'Workflow diagram' },
-    { variant: 'architecture' as const, heading: 'Architecture diagram' },
-    { variant: 'component-system' as const, heading: 'Component system mockup' },
-    { variant: 'before-after' as const, heading: 'Before / after structure' },
-    { variant: 'metrics' as const, heading: 'Metrics panel' },
+    {
+      variant: 'workflow',
+      heading: 'Workflow diagram',
+      items: ['Input', 'Decision', 'Action', 'Feedback'],
+    },
+    { variant: 'architecture', heading: 'Architecture diagram', items: [] },
+    { variant: 'component-system', heading: 'Component system mockup', items: [] },
+    { variant: 'before-after', heading: 'Before / after structure', items: [] },
+    { variant: 'metrics', heading: 'Metrics panel', items: [] },
   ],
+};
+
+export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
+  'erp-integrations-platform': {
+    summary:
+      'Designed and shipped an Angular-based ERP integration experience that helped enterprise customers connect ERP systems through a guided setup flow and monitor connection health from a dashboard.',
+    context:
+      'This was part of a B2B SaaS product for machine manufacturers managing complex spare-parts pricing workflows across large SKU datasets.',
+    problem:
+      'Enterprise customers needed a clearer way to connect ERP systems, understand setup progress, recover from errors, and monitor sync status without relying heavily on manual support.',
+    role:
+      'Senior frontend and product engineer responsible for the Angular frontend experience, UI states, redirect handling, dashboard visibility, error feedback, API integration, testing, and delivery quality.',
+    constraints: [
+      'The setup journey handed users into a Workato-powered connector flow and then redirected them back into the product.',
+      'The dashboard needed to represent connection health, sync errors, missing data, and manual actions clearly.',
+      'Loading, error, and recovery states needed to reduce dependence on manual support.',
+    ],
+    approach: [
+      'Designed the guided setup journey around a Workato-powered connector flow.',
+      'Built the frontend handoff into setup and the redirect back into the product.',
+      'Created dashboard states for connection status, sync errors, missing data, and manual actions.',
+      'Added clear feedback for errors, loading states, next steps, and recovery.',
+      'Collaborated with product and backend engineers to align the experience with customer onboarding needs.',
+    ],
+    decisions: [
+      {
+        heading: 'Treat the connector as one guided journey',
+        text: 'The product handoff, Workato flow, and return redirect were designed as one continuous onboarding experience.',
+      },
+      {
+        heading: 'Make connection health visible',
+        text: 'Dashboard states surfaced status, sync errors, missing data, and available manual actions in one place.',
+      },
+      {
+        heading: 'Design recovery as a first-class state',
+        text: 'Loading, error feedback, and next steps were explicit so users could understand what happened and how to continue.',
+      },
+    ],
+    outcomes: [
+      'Supported ERP onboarding for 5+ enterprise clients.',
+      'Improved onboarding efficiency by approximately 40%.',
+      'Reduced user confusion during setup through clearer status visibility and guided feedback.',
+    ],
+    learned:
+      'When part of an onboarding journey happens outside the product, clear handoffs, visible status, and actionable recovery guidance are essential to making the experience feel coherent.',
+    tech: [
+      'Angular',
+      'TypeScript',
+      'RxJS',
+      'REST APIs',
+      'Workato integration flow',
+      'Playwright',
+      'Azure DevOps',
+    ],
+    visuals: [
+      {
+        variant: 'workflow',
+        heading: 'ERP connection workflow',
+        items: ['Product setup', 'Workato connector', 'ERP system', 'Connection dashboard'],
+      },
+    ],
+  },
 };

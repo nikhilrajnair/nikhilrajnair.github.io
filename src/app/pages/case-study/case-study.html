@@ -4,9 +4,9 @@
       <a class="back-link" routerLink="/work">← All work</a>
       <span appBadge>{{ project().type }}</span>
       <h1>{{ project().title }}</h1>
-      <p class="lede">{{ project().summary }}</p>
+      <p class="lede">{{ content().summary }}</p>
       <dl>
-        <div><dt>Role</dt><dd>{{ project().role }}</dd></div>
+        <div><dt>Role</dt><dd>{{ content().role }}</dd></div>
         <div><dt>Format</dt><dd>NDA-safe case study</dd></div>
       </dl>
     </header>
@@ -20,26 +20,26 @@
       <section>
         <p class="eyebrow">Context</p>
         <h2>Set the scene without naming the client.</h2>
-        <p>{{ template.context }}</p>
+        <p>{{ content().context }}</p>
       </section>
 
       <section>
         <p class="eyebrow">Problem</p>
         <h2>Explain the challenge at the right altitude.</h2>
-        <p>{{ template.problem }}</p>
+        <p>{{ content().problem }}</p>
       </section>
 
       <section>
         <p class="eyebrow">My role</p>
         <h2>Make ownership and collaboration clear.</h2>
-        <p>{{ template.role }}</p>
+        <p>{{ content().role }}</p>
       </section>
 
       <section>
         <p class="eyebrow">Constraints</p>
         <h2>Show the boundaries that shaped the work.</h2>
         <ul>
-          @for (constraint of template.constraints; track constraint) {
+          @for (constraint of content().constraints; track constraint) {
             <li>{{ constraint }}</li>
           }
         </ul>
@@ -50,7 +50,7 @@
       <p class="eyebrow">Approach</p>
       <h2>Describe the sequence, not confidential implementation detail.</h2>
       <ol class="approach-list">
-        @for (step of template.approach; track step; let index = $index) {
+        @for (step of content().approach; track step; let index = $index) {
           <li><span>{{ index + 1 }}</span><p>{{ step }}</p></li>
         }
       </ol>
@@ -61,8 +61,12 @@
       <h2>Communicate structure without product screenshots.</h2>
       <p class="section-intro">Choose the visual that best supports the story. Every option is deliberately generic and contains no client or product data.</p>
       <div class="visual-grid">
-        @for (visual of template.visuals; track visual.variant) {
-          <app-case-study-visual [variant]="visual.variant" [heading]="visual.heading" />
+        @for (visual of content().visuals; track visual.variant) {
+          <app-case-study-visual
+            [variant]="visual.variant"
+            [heading]="visual.heading"
+            [items]="visual.items"
+          />
         }
       </div>
     </section>
@@ -71,7 +75,7 @@
       <p class="eyebrow">Key decisions</p>
       <h2>Make the engineering judgment visible.</h2>
       <div class="decision-grid">
-        @for (decision of template.decisions; track decision.heading) {
+        @for (decision of content().decisions; track decision.heading) {
           <article>
             <h3>{{ decision.heading }}</h3>
             <p>{{ decision.text }}</p>
@@ -84,13 +88,17 @@
       <section>
         <p class="eyebrow">Outcome</p>
         <h2>Use only approved proof.</h2>
-        <p>{{ project().outcome ?? template.outcome }}</p>
+        <ul class="impact-list">
+          @for (outcome of content().outcomes; track outcome) {
+            <li>{{ outcome }}</li>
+          }
+        </ul>
       </section>
 
       <section>
         <p class="eyebrow">What I learned</p>
         <h2>End with a transferable lesson.</h2>
-        <p>{{ template.learned }}</p>
+        <p>{{ content().learned }}</p>
       </section>
     </div>
 
@@ -98,7 +106,7 @@
       <p class="eyebrow">Tech stack</p>
       <h2>List technologies that are safe to publish.</h2>
       <ul class="stack-list">
-        @for (technology of project().skills; track technology) {
+        @for (technology of content().tech; track technology) {
           <li>{{ technology }}</li>
         }
       </ul>
