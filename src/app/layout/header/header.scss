@@ -1,0 +1,60 @@
+:host {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: block;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  background: color-mix(in srgb, var(--color-background) 92%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+header {
+  display: flex;
+  width: min(calc(100% - var(--space-8)), var(--content-wide));
+  min-height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-inline: auto;
+}
+
+.brand {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--space-3), 3vw, var(--space-6));
+}
+
+nav a {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--color-text);
+}
+
+nav a.active {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 0.45rem;
+}
+
+@media (max-width: 34rem) {
+  header {
+    width: min(calc(100% - var(--space-5)), var(--content-wide));
+    gap: var(--space-3);
+  }
+
+  nav {
+    gap: var(--space-3);
+  }
+}
