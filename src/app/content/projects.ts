@@ -7,6 +7,10 @@ export type Project = {
   summary: string;
   outcome?: string;
   skills: readonly string[];
+  coverImage?: {
+    path: string;
+    alt: string;
+  };
   detailPath?: string;
   externalUrl?: string;
 };
@@ -21,6 +25,10 @@ export const projects: readonly Project[] = [
     summary: 'Frontend workflows for guided enterprise ERP integration and onboarding.',
     outcome: 'Supported integration workflows for 5+ enterprise clients.',
     skills: ['Angular', 'TypeScript', 'Workato'],
+    coverImage: {
+      path: 'images/case-studies/erp-integrations-platform.webp',
+      alt: 'Abstract case study cover showing ERP setup, connector handoff, return flow, and connection monitoring.',
+    },
     detailPath: '/work/erp-integrations-platform',
   },
   {
@@ -32,6 +40,10 @@ export const projects: readonly Project[] = [
     summary: 'A consistent, type-safe foundation for product events and funnel visibility.',
     outcome: 'Created a shared tracking model for product decision-making.',
     skills: ['Angular', 'TypeScript', 'Mixpanel'],
+    coverImage: {
+      path: 'images/case-studies/product-analytics-foundation.webp',
+      alt: 'Abstract case study cover showing a product interaction flowing through Angular tracking and Mixpanel to analytics insights.',
+    },
     detailPath: '/work/product-analytics-foundation',
   },
   {
@@ -43,6 +55,10 @@ export const projects: readonly Project[] = [
     summary: 'E2E coverage and automated releases for safer, faster frontend delivery.',
     outcome: 'Improved release confidence by 30%+ and cut release cycles by ~50%.',
     skills: ['Playwright', 'Azure DevOps', 'Semantic Release'],
+    coverImage: {
+      path: 'images/case-studies/frontend-quality-release-automation.webp',
+      alt: 'Abstract case study cover showing a code change moving through build, Playwright tests, quality checks, and deployment.',
+    },
   },
   {
     slug: 'insurance-user-journeys',
@@ -53,6 +69,10 @@ export const projects: readonly Project[] = [
     summary: 'Clearer, more reliable product journeys across web and hybrid mobile surfaces.',
     outcome: 'Improved key insurance app user journeys across devices.',
     skills: ['Ember.js', 'TypeScript', 'Capacitor'],
+    coverImage: {
+      path: 'images/case-studies/insurance-user-journeys.webp',
+      alt: 'Abstract case study cover showing an insurance journey from onboarding to policy overview and support access.',
+    },
   },
 ];
 

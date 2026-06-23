@@ -26,6 +26,23 @@
   gap: var(--space-1);
 }
 
+.case-cover {
+  overflow: hidden;
+  aspect-ratio: 8 / 5;
+  margin-bottom: var(--space-12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.case-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 dt {
   color: var(--color-text-subtle);
   font-size: var(--font-size-xs);
@@ -229,5 +246,10 @@ dd {
   .story-grid section:nth-child(even) {
     padding-inline: 0;
     border-left: 0;
+  }
+
+  .case-cover {
+    margin-bottom: var(--space-10);
+    border-radius: var(--radius-lg);
   }
 }
