@@ -209,6 +209,15 @@ button {
   padding-bottom: 0;
 }
 
+.work-grid,
+.secondary-grid {
+  padding-bottom: 0;
+}
+
+.secondary-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
 .focus-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

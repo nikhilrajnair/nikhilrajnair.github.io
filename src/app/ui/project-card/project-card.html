@@ -1,14 +1,45 @@
 <article>
   <div class="card-topline">
     <span appBadge>{{ project().type }}</span>
-    <span class="year">{{ project().year }}</span>
-  </div>
-  <h2>{{ project().title }}</h2>
-  <p>{{ project().summary }}</p>
-  <ul aria-label="Technologies used">
-    @for (skill of project().skills; track skill) {
-      <li>{{ skill }}</li>
+    @if (project().year) {
+      <span class="year">{{ project().year }}</span>
     }
-  </ul>
-  <a appButton variant="secondary" [routerLink]="['/work', project().slug]">View case study</a>
+  </div>
+
+  <h2>{{ project().title }}</h2>
+  <p class="summary">{{ project().summary }}</p>
+
+  <dl>
+    <div>
+      <dt>Role</dt>
+      <dd>{{ project().role }}</dd>
+    </div>
+    @if (project().outcome) {
+      <div>
+        <dt>Outcome</dt>
+        <dd>{{ project().outcome }}</dd>
+      </div>
+    }
+  </dl>
+
+  <div class="stack">
+    <span>Tech stack</span>
+    @if (project().skills.length) {
+      <ul aria-label="Technologies used">
+        @for (skill of project().skills; track skill) {
+          <li>{{ skill }}</li>
+        }
+      </ul>
+    } @else {
+      <p class="unavailable">Not published</p>
+    }
+  </div>
+
+  @if (project().detailPath) {
+    <a appButton variant="secondary" [routerLink]="project().detailPath">View case study</a>
+  } @else if (project().externalUrl) {
+    <a appButton variant="secondary" [href]="project().externalUrl" target="_blank" rel="noreferrer">
+      View project <span aria-hidden="true">↗</span>
+    </a>
+  }
 </article>
