@@ -1,13 +1,34 @@
 <app-container>
   <header class="page-intro">
     <p class="eyebrow">Work</p>
-    <h1>Selected product engineering work.</h1>
-    <p class="lede">Case studies focused on the problem, the trade-offs, and the outcome.</p>
+    <h1>Frontend systems with product impact.</h1>
+    <p class="lede">
+      Case studies and selected projects across B2B SaaS, analytics, insurance, healthcare, and
+      enterprise software.
+    </p>
   </header>
+</app-container>
 
-  <div class="card-grid">
+<app-section
+  eyebrow="Primary case studies"
+  heading="Problems, decisions, and measurable outcomes."
+  intro="The projects with the clearest product context and proof of impact."
+>
+  <div class="card-grid work-grid">
     @for (project of projects; track project.slug) {
       <app-project-card [project]="project" />
     }
   </div>
-</app-container>
+</app-section>
+
+<app-section
+  eyebrow="Selected projects"
+  heading="More systems I’ve built and led."
+  intro="A broader view of product, platform, open-source, and enterprise work."
+>
+  <div class="card-grid secondary-grid">
+    @for (project of secondaryProjects; track project.slug) {
+      <app-project-card [project]="project" compact />
+    }
+  </div>
+</app-section>
