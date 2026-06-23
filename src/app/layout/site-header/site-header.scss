@@ -13,6 +13,7 @@ header {
   border-radius: var(--radius-xl);
   background: color-mix(in srgb, var(--color-surface) 84%, transparent);
   box-shadow: var(--shadow-xs);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   backdrop-filter: blur(16px) saturate(140%);
 }
 
