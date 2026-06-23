@@ -7,10 +7,8 @@ export type Project = {
   summary: string;
   outcome?: string;
   skills: readonly string[];
-  coverImage?: {
-    path: string;
-    alt: string;
-  };
+  coverImage?: string;
+  coverAlt?: string;
   detailPath?: string;
   externalUrl?: string;
 };
@@ -25,10 +23,9 @@ export const projects: readonly Project[] = [
     summary: 'Frontend workflows for guided enterprise ERP integration and onboarding.',
     outcome: 'Supported integration workflows for 5+ enterprise clients.',
     skills: ['Angular', 'TypeScript', 'Workato'],
-    coverImage: {
-      path: 'images/case-studies/erp-integrations-platform.webp',
-      alt: 'Abstract case study cover showing ERP setup, connector handoff, return flow, and connection monitoring.',
-    },
+    coverImage: 'images/case-studies/erp-integrations-platform.webp',
+    coverAlt:
+      'Abstract ERP integration workflow showing guided setup, connector handoff, redirect handling, dashboard sync status, and operational summary.',
     detailPath: '/work/erp-integrations-platform',
   },
   {
@@ -40,10 +37,9 @@ export const projects: readonly Project[] = [
     summary: 'A consistent, type-safe foundation for product events and funnel visibility.',
     outcome: 'Created a shared tracking model for product decision-making.',
     skills: ['Angular', 'TypeScript', 'Mixpanel'],
-    coverImage: {
-      path: 'images/case-studies/product-analytics-foundation.webp',
-      alt: 'Abstract case study cover showing a product interaction flowing through Angular tracking and Mixpanel to analytics insights.',
-    },
+    coverImage: 'images/case-studies/product-analytics-foundation.webp',
+    coverAlt:
+      'Abstract product analytics workflow showing UI interaction, tracking directive, analytics service, event payload, and insights dashboard.',
     detailPath: '/work/product-analytics-foundation',
   },
   {
@@ -55,10 +51,9 @@ export const projects: readonly Project[] = [
     summary: 'E2E coverage and automated releases for safer, faster frontend delivery.',
     outcome: 'Improved release confidence by 30%+ and cut release cycles by ~50%.',
     skills: ['Playwright', 'Azure DevOps', 'Semantic Release'],
-    coverImage: {
-      path: 'images/case-studies/frontend-quality-release-automation.webp',
-      alt: 'Abstract case study cover showing a code change moving through build, Playwright tests, quality checks, and deployment.',
-    },
+    coverImage: 'images/case-studies/frontend-quality-release-automation.webp',
+    coverAlt:
+      'Abstract release automation workflow showing code commit, build, E2E test, quality gate, deployment, and release metrics.',
   },
   {
     slug: 'insurance-user-journeys',
@@ -69,10 +64,9 @@ export const projects: readonly Project[] = [
     summary: 'Clearer, more reliable product journeys across web and hybrid mobile surfaces.',
     outcome: 'Improved key insurance app user journeys across devices.',
     skills: ['Ember.js', 'TypeScript', 'Capacitor'],
-    coverImage: {
-      path: 'images/case-studies/insurance-user-journeys.webp',
-      alt: 'Abstract case study cover showing an insurance journey from onboarding to policy overview and support access.',
-    },
+    coverImage: 'images/case-studies/insurance-app-user-journey.webp',
+    coverAlt:
+      'Abstract mobile insurance app journey showing onboarding, policy overview, support access, and product impact metrics.',
   },
 ];
 
@@ -84,6 +78,9 @@ export const secondaryProjects: readonly Project[] = [
     role: 'Creator',
     summary: 'A selected product project with implementation details being prepared for publication.',
     skills: [],
+    coverImage: 'images/projects/ozo-side-project.webp',
+    coverAlt:
+      'OZO product concept showing a mobile app and admin dashboard for documents, warranties, invoices, memberships, and reminders.',
   },
   {
     slug: 'transporterr',
@@ -93,6 +90,9 @@ export const secondaryProjects: readonly Project[] = [
     summary: 'A multi-tenant fleet management platform spanning web, API, and driver workflows.',
     outcome: 'Established shared web, backend, mobile, and infrastructure foundations in one monorepo.',
     skills: ['Angular', 'Spring Boot', 'PostgreSQL', 'React Native'],
+    coverImage: 'images/projects/transporterr-ai-document-workflow.webp',
+    coverAlt:
+      'Transporterr workflow showing document upload, AI extraction, structured data review, confidence scoring, and export.',
   },
   {
     slug: 'ng-track-event-directive',
@@ -102,6 +102,9 @@ export const secondaryProjects: readonly Project[] = [
     summary: 'A lightweight Angular directive for declarative click, hover, and view analytics events.',
     outcome: 'Adapter-based integration for Mixpanel, Segment, GA4, or custom analytics backends.',
     skills: ['Angular', 'TypeScript', 'IntersectionObserver'],
+    coverImage: 'images/projects/ng-track-event-directive.webp',
+    coverAlt:
+      'Event tracking pipeline showing UI interaction, Angular tracking directive, structured event payload, tracking service, and analytics platform.',
     externalUrl: 'https://github.com/nikhilrajnair/ng-track-event-directive',
   },
   {
@@ -112,6 +115,9 @@ export const secondaryProjects: readonly Project[] = [
     summary: 'Operational dashboards for doctors, health coaches, administrators, and patient analytics.',
     outcome: 'Supported digital therapeutics products across EPAC, APAC, and the USA.',
     skills: ['Angular', 'Angular Material', 'RxJS', 'Google Charts'],
+    coverImage: 'images/projects/healthcare-admin-dashboard.webp',
+    coverAlt:
+      'Healthcare admin dashboard concept showing care console navigation, patient activity charts, care-team workflows, recent patients, and operational insights.',
   },
   {
     slug: 'asset-management-platform',
@@ -121,5 +127,8 @@ export const secondaryProjects: readonly Project[] = [
     summary: 'An Angular application for enterprise asset management workflows and data-heavy interfaces.',
     outcome: 'Improved load speed by 20% through lazy loading and change-detection optimization.',
     skills: ['Angular', 'TypeScript', 'RxJS', 'Syncfusion'],
+    coverImage: 'images/projects/asset-management-platform.webp',
+    coverAlt:
+      'Asset management platform concept showing data upload, validation summary, recent uploads, quality checks, and export actions.',
   },
 ];

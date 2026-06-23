@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { App } from './app';
 import { caseStudies, caseStudyVisuals } from './content/case-study-template';
-import { projects } from './content/projects';
+import { projects, secondaryProjects } from './content/projects';
 
 describe('App', () => {
   beforeEach(async () => {
@@ -44,11 +44,12 @@ describe('App', () => {
   });
 
   it('should use accessible public-folder paths for case study covers', () => {
-    const covers = projects.flatMap((project) => (project.coverImage ? [project.coverImage] : []));
+    const covers = [...projects, ...secondaryProjects].filter((project) => project.coverImage);
 
-    expect(covers.length).toBe(4);
-    expect(covers.every((cover) => cover.path.startsWith('images/case-studies/'))).toBeTrue();
-    expect(covers.every((cover) => !cover.path.includes('public/'))).toBeTrue();
-    expect(covers.every((cover) => cover.alt.trim().length > 0)).toBeTrue();
+    expect(covers.length).toBe(9);
+    expect(covers.every((project) => project.coverImage?.startsWith('images/'))).toBeTrue();
+    expect(covers.every((project) => !project.coverImage?.includes('public/'))).toBeTrue();
+    expect(covers.every((project) => !project.coverImage?.includes('src/assets/'))).toBeTrue();
+    expect(covers.every((project) => project.coverAlt?.trim())).toBeTrue();
   });
 });

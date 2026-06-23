@@ -11,11 +11,11 @@
       </dl>
     </header>
 
-    @if (project().coverImage; as cover) {
+    @if (project().coverImage; as coverImage) {
       <div class="case-cover">
         <img
-          [src]="cover.path"
-          [alt]="cover.alt"
+          [src]="coverImage"
+          [alt]="project().coverAlt ?? ''"
           width="1586"
           height="992"
           decoding="async"
