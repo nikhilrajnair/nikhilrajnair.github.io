@@ -22,18 +22,11 @@
   <h3>{{ project().title }}</h3>
   <p class="summary">{{ project().summary }}</p>
 
-  <dl>
-    <div>
-      <dt>Role</dt>
-      <dd>{{ project().role }}</dd>
-    </div>
-    @if (project().outcome) {
-      <div>
-        <dt>Outcome</dt>
-        <dd>{{ project().outcome }}</dd>
-      </div>
+  @if (!compact()) {
+    @if (project().outcome; as impact) {
+      <p class="impact"><span>Impact</span>{{ impact }}</p>
     }
-  </dl>
+  }
 
   <div class="stack">
     <span>Tech stack</span>
@@ -48,24 +41,26 @@
     }
   </div>
 
-  @if (project().detailPath) {
-    <a appButton variant="secondary" [routerLink]="project().detailPath">
-      {{ compact() ? 'View project' : 'View case study' }}
-    </a>
-  } @else if (project().externalUrl) {
-    <a
-      appButton
-      variant="secondary"
-      [href]="project().externalUrl"
-      target="_blank"
-      rel="noreferrer"
-      [attr.aria-label]="'View ' + project().title + ' (opens in a new tab)'"
-    >
-      View project <span aria-hidden="true">↗</span>
-    </a>
-  } @else if (compact()) {
-    <a appButton variant="secondary" routerLink="/work" fragment="selected-projects">
-      View project
-    </a>
+  @if (compact()) {
+    @if (project().detailPath) {
+      <a appButton variant="secondary" [routerLink]="project().detailPath">View project</a>
+    } @else if (project().externalUrl) {
+      <a
+        appButton
+        variant="secondary"
+        [href]="project().externalUrl"
+        target="_blank"
+        rel="noreferrer"
+        [attr.aria-label]="'View ' + project().title + ' (opens in a new tab)'"
+      >
+        View project <span aria-hidden="true">↗</span>
+      </a>
+    } @else {
+      <span class="unavailable-action" aria-disabled="true">Details coming soon</span>
+    }
+  } @else if (project().detailPath; as detailPath) {
+    <footer class="card-footer">
+      <a class="case-link" [routerLink]="detailPath">View case study</a>
+    </footer>
   }
 </article>
