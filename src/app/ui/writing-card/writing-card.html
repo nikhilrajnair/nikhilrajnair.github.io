@@ -1,11 +1,15 @@
 <article>
   <div class="meta">
-    <span appBadge>{{ article().topic }}</span>
+    <span appBadge>{{ article().category }}</span>
     <span>{{ article().published }}</span>
+    <span aria-hidden="true">·</span>
+    <span>{{ article().readingTime }}</span>
   </div>
   <h2>{{ article().title }}</h2>
   <p>{{ article().summary }}</p>
-  <a [href]="article().url" target="_blank" rel="noreferrer">
-    Read article <span aria-hidden="true">↗</span>
-  </a>
+  @if (article().url; as url) {
+    <a [href]="url" target="_blank" rel="noreferrer">
+      Read article <span aria-hidden="true">↗</span>
+    </a>
+  }
 </article>
