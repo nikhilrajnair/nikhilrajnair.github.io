@@ -1,0 +1,14 @@
+<article>
+  <div>
+    <span appBadge>{{ project().type }}</span>
+    <h3>{{ project().title }}</h3>
+    <p>{{ project().summary }}</p>
+    <a [routerLink]="['/work', project().slug]" [attr.aria-label]="'Read case study: ' + project().title">
+      Read case study <span aria-hidden="true">→</span>
+    </a>
+  </div>
+  <div class="outcome">
+    <span>Outcome</span>
+    <strong>{{ project().outcome }}</strong>
+  </div>
+</article>

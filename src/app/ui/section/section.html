@@ -1,0 +1,14 @@
+<section>
+  <app-container>
+    <header>
+      @if (eyebrow()) {
+        <p class="eyebrow">{{ eyebrow() }}</p>
+      }
+      <h2>{{ heading() }}</h2>
+      @if (intro()) {
+        <p class="intro">{{ intro() }}</p>
+      }
+    </header>
+    <ng-content />
+  </app-container>
+</section>

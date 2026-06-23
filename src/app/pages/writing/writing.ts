@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { writings } from '../../content/writings';
-import { PageLayout } from '../../layout/page-layout/page-layout';
+import { Container } from '../../ui/container/container';
+import { WritingCard } from '../../ui/writing-card/writing-card';
 
 @Component({
   selector: 'app-writing',
-  imports: [PageLayout],
+  imports: [Container, WritingCard],
   templateUrl: './writing.html',
 })
 export class Writing {

@@ -1,0 +1,14 @@
+<article>
+  <div class="card-topline">
+    <span appBadge>{{ project().type }}</span>
+    <span class="year">{{ project().year }}</span>
+  </div>
+  <h2>{{ project().title }}</h2>
+  <p>{{ project().summary }}</p>
+  <ul aria-label="Technologies used">
+    @for (skill of project().skills; track skill) {
+      <li>{{ skill }}</li>
+    }
+  </ul>
+  <a appButton variant="secondary" [routerLink]="['/work', project().slug]">View case study</a>
+</article>

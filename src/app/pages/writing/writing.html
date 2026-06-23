@@ -1,17 +1,13 @@
-<app-page-layout>
+<app-container>
   <header class="page-intro">
     <p class="eyebrow">Writing</p>
     <h1>Notes on frontend engineering.</h1>
-    <p class="lede">Practical writing about architecture, performance, and product craft.</p>
+    <p class="lede">Practical writing about architecture, delivery, and product craft.</p>
   </header>
 
-  <div class="article-list">
+  <div class="writing-list">
     @for (article of writings; track article.slug) {
-      <article>
-        <p class="eyebrow">{{ article.topic }}</p>
-        <h2>{{ article.title }}</h2>
-        <p>{{ article.summary }}</p>
-      </article>
+      <app-writing-card [article]="article" />
     }
   </div>
-</app-page-layout>
+</app-container>

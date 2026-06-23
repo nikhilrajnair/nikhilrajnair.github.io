@@ -1,9 +1,29 @@
-<app-page-layout>
-  <article class="page-intro copy">
+<app-container>
+  <header class="page-intro">
     <p class="eyebrow">About</p>
     <h1>Engineering with product judgment.</h1>
     <p class="lede">
-      This page will hold a concise background, technical strengths, working style, and values.
+      I work where interface design, frontend architecture, and delivery meet—turning complex
+      product needs into calm, maintainable experiences.
     </p>
-  </article>
-</app-page-layout>
+  </header>
+</app-container>
+
+<app-section
+  eyebrow="Capabilities"
+  heading="A practical frontend toolkit."
+  intro="Tools change. The useful part is knowing which trade-off a product actually needs."
+>
+  <div class="skill-grid">
+    @for (group of skillGroups; track group.heading) {
+      <app-skill-group [heading]="group.heading" [skills]="group.skills" />
+    }
+  </div>
+</app-section>
+
+<app-cta-section
+  heading="Let’s make the complicated feel simple."
+  text="If you’re building a thoughtful product and care about the frontend foundation, I’d be glad to hear about it."
+  link="/work"
+  linkLabel="See selected work"
+/>
