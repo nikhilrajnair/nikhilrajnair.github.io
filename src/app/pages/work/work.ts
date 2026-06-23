@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { projects } from '../../content/projects';
-import { PageLayout } from '../../layout/page-layout/page-layout';
+import { Container } from '../../ui/container/container';
+import { ProjectCard } from '../../ui/project-card/project-card';
 
 @Component({
   selector: 'app-work',
-  imports: [PageLayout, RouterLink],
+  imports: [Container, ProjectCard],
   templateUrl: './work.html',
 })
 export class Work {

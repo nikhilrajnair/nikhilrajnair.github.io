@@ -1,8 +1,28 @@
-<app-page-layout>
-  <article class="page-intro">
-    <a class="text-link" routerLink="/work">← All work</a>
-    <p class="eyebrow">Case study</p>
+<app-container>
+  <article class="page-intro case-study-intro">
+    <a class="back-link" routerLink="/work">← All work</a>
+    <span appBadge>Case study</span>
     <h1>Project title placeholder.</h1>
-    <p class="lede">The detailed story, technical decisions, and outcomes will be added here.</p>
+    <p class="lede">The detailed context, technical decisions, and outcomes will be added here.</p>
+    <a appButton variant="secondary" routerLink="/work">Back to selected work</a>
   </article>
-</app-page-layout>
+</app-container>
+
+<app-section
+  eyebrow="At a glance"
+  heading="The shape of the work."
+  intro="Placeholder metrics establish the reusable case-study layout without inventing a full story."
+>
+  <div class="metric-grid">
+    <app-metric-card value="—" label="Outcome metric" detail="Measured result will go here." />
+    <app-metric-card value="—" label="Team context" detail="Roles and collaboration will go here." />
+    <app-metric-card value="—" label="Delivery window" detail="Timeline and constraints will go here." />
+  </div>
+</app-section>
+
+<app-cta-section
+  heading="Explore the rest of the work."
+  text="More case-study detail will be added once the content is ready."
+  link="/work"
+  linkLabel="View all work"
+/>

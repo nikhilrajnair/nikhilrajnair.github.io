@@ -1,18 +1,13 @@
-<app-page-layout>
+<app-container>
   <header class="page-intro">
     <p class="eyebrow">Work</p>
     <h1>Selected product engineering work.</h1>
-    <p class="lede">Placeholder case studies focused on problems, trade-offs, and outcomes.</p>
+    <p class="lede">Case studies focused on the problem, the trade-offs, and the outcome.</p>
   </header>
 
   <div class="card-grid">
     @for (project of projects; track project.slug) {
-      <article class="card">
-        <p class="eyebrow">{{ project.type }}</p>
-        <h2>{{ project.title }}</h2>
-        <p>{{ project.summary }}</p>
-        <a class="text-link" [routerLink]="['/work', project.slug]">View case study</a>
-      </article>
+      <app-project-card [project]="project" />
     }
   </div>
-</app-page-layout>
+</app-container>

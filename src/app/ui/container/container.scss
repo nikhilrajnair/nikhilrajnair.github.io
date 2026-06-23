@@ -1,15 +1,11 @@
 :host {
   display: block;
-}
-
-.page-layout {
   width: min(calc(100% - var(--space-8)), var(--content-wide));
   margin-inline: auto;
-  padding-block: clamp(var(--space-12), 10vw, var(--space-20));
 }
 
 @media (max-width: 34rem) {
-  .page-layout {
+  :host {
     width: min(calc(100% - var(--space-5)), var(--content-wide));
   }
 }
