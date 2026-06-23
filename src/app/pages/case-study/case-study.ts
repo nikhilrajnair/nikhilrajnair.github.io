@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { caseStudyTemplate } from '../../content/case-study-template';
+import { caseStudies, caseStudyTemplate } from '../../content/case-study-template';
 import { Project, projects } from '../../content/projects';
 import { Badge } from '../../ui/badge/badge';
 import { Button } from '../../ui/button/button';
@@ -12,8 +12,8 @@ const placeholderProject: Project = {
   title: 'Case Study Template',
   type: 'NDA-safe placeholder',
   role: 'Add your approved role',
-  summary: 'A reusable structure for explaining product and engineering work without confidential details.',
-  skills: caseStudyTemplate.fallbackStack,
+  summary: caseStudyTemplate.summary,
+  skills: caseStudyTemplate.tech,
 };
 
 @Component({
@@ -25,7 +25,7 @@ const placeholderProject: Project = {
 export class CaseStudy {
   readonly slug = input('template');
 
-  protected readonly template = caseStudyTemplate;
+  protected readonly content = computed(() => caseStudies[this.slug()] ?? caseStudyTemplate);
   protected readonly project = computed(
     () => projects.find((project) => project.slug === this.slug()) ?? placeholderProject,
   );

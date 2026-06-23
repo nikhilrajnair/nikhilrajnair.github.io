@@ -10,4 +10,5 @@ import { CaseStudyVisualVariant } from '../../content/case-study-template';
 export class CaseStudyVisual {
   readonly variant = input.required<CaseStudyVisualVariant>();
   readonly heading = input.required<string>();
+  readonly items = input.required<readonly string[]>();
 }
