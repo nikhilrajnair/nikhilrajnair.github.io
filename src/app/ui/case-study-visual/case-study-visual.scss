@@ -24,6 +24,8 @@ figure > p {
 }
 
 .workflow,
+.system-flow,
+.journey-comparison,
 .architecture,
 .component-system,
 .before-after,
@@ -32,6 +34,123 @@ figure > p {
   padding: var(--space-4);
   border-radius: var(--radius-md);
   background: var(--color-surface-subtle);
+}
+
+.system-flow {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-5);
+  margin: 0;
+  list-style: none;
+}
+
+.system-flow li {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  align-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.system-flow li:not(:last-child)::after {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 100%;
+  width: var(--space-5);
+  height: 1px;
+  background: var(--color-accent);
+  content: '';
+}
+
+.system-flow span {
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.system-flow strong {
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+
+.erp-flow li:nth-child(2) {
+  border-color: color-mix(in srgb, var(--color-accent) 38%, var(--color-border));
+  background: color-mix(in srgb, var(--color-accent) 4%, var(--color-surface));
+}
+
+.analytics-flow li {
+  border-top: 2px solid var(--color-accent);
+}
+
+.release-flow li {
+  box-shadow: inset 0 -2px 0 color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+.journey-comparison {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.journey-comparison > div {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.lane-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.journey-path {
+  display: flex;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey-path li {
+  position: relative;
+  min-width: 0;
+  flex: 1;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+.journey-path li:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: var(--space-5);
+  border-top: 1px solid var(--color-accent);
+  content: '';
+}
+
+.journey-before {
+  opacity: 0.72;
+}
+
+.journey-before li:not(:last-child)::after {
+  border-top-style: dashed;
+  border-color: var(--color-text-subtle);
+}
+
+.journey-after li {
+  border-color: color-mix(in srgb, var(--color-accent) 38%, var(--color-border));
 }
 
 .workflow {
@@ -157,15 +276,36 @@ figure > p {
 }
 
 @media (max-width: 34rem) {
-  .workflow {
+  .workflow,
+  .system-flow,
+  .journey-path {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .workflow i {
+  .workflow i,
+  .system-flow li:not(:last-child)::after,
+  .journey-path li:not(:last-child)::after {
     width: 1px;
     height: var(--space-3);
     align-self: center;
+  }
+
+  .system-flow li:not(:last-child)::after,
+  .journey-path li:not(:last-child)::after {
+    top: 100%;
+    left: 50%;
+    border-top: 0;
+    border-left: 1px solid var(--color-accent);
+  }
+
+  .journey-before li:not(:last-child)::after {
+    border-left-style: dashed;
+    border-color: var(--color-text-subtle);
+  }
+
+  .journey-comparison > div {
+    grid-template-columns: 1fr;
   }
 
   .metrics {

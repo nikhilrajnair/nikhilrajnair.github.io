@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { App } from './app';
-import { caseStudies } from './content/case-study-template';
+import { caseStudies, caseStudyVisuals } from './content/case-study-template';
 import { projects } from './content/projects';
 
 describe('App', () => {
@@ -31,5 +31,15 @@ describe('App', () => {
     const linkedProjects = projects.filter((project) => project.detailPath);
 
     expect(linkedProjects.every((project) => caseStudies[project.slug])).toBeTrue();
+  });
+
+  it('should define all NDA-safe visual presets', () => {
+    expect(Object.keys(caseStudyVisuals)).toEqual([
+      'erpIntegration',
+      'productAnalytics',
+      'releaseAutomation',
+      'insuranceJourney',
+    ]);
+    expect(Object.values(caseStudyVisuals).every((visual) => visual.items.length > 0)).toBeTrue();
   });
 });
