@@ -4,9 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "fetch:articles": "node scripts/fetch-devto.mjs",
-    "build": "npm run fetch:articles && ng build",
-    "build:pages": "npm run fetch:articles && ng build --configuration production --output-path docs --base-href / && cp -R docs/browser/. docs/ && rm -rf docs/browser docs/prerendered-routes.json",
+    "build": "ng build",
+    "build:pages": "ng build --configuration production --output-path docs --base-href / && cp -R docs/browser/. docs/ && rm -rf docs/browser docs/prerendered-routes.json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -30,7 +29,6 @@
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
-    "mixpanel-browser": "^2.78.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
