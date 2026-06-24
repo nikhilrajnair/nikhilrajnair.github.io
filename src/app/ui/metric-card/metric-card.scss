@@ -17,6 +17,7 @@ strong {
   display: block;
   color: var(--color-accent);
   font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: var(--font-weight-semibold);
   line-height: 1;
   letter-spacing: -0.05em;
 }
@@ -24,6 +25,7 @@ strong {
 h3 {
   margin-top: var(--space-3);
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   line-height: 1.35;
 }
 

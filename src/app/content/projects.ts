@@ -63,7 +63,7 @@ export const projects: readonly Project[] = [
     role: 'Senior Frontend Engineer',
     year: '2025',
     summary: 'Mobile-first onboarding, contract, and support improvements for insurance users.',
-    outcome: 'Improved engagement and support access for 600k+ users.',
+    outcome: 'Improved engagement and support access for a platform serving 700k+ users.',
     skills: ['Ember.js', 'TypeScript', 'Capacitor'],
     coverImage: 'images/case-studies/insurance-app-user-journey.webp',
     coverAlt:
@@ -78,8 +78,9 @@ export const secondaryProjects: readonly Project[] = [
     title: 'OZO',
     type: 'Product project',
     role: 'Creator',
-    summary: 'A selected product project with implementation details being prepared for publication.',
-    skills: [],
+    summary: 'A consumer app for organizing invoices, warranties, memberships, and renewal reminders.',
+    outcome: 'Built reusable mobile and admin workflows with deep linking and structured records.',
+    skills: ['React Native', 'React', 'TypeScript'],
     coverImage: 'images/projects/ozo-side-project.webp',
     coverAlt:
       'OZO product concept showing a mobile app and admin dashboard for documents, warranties, invoices, memberships, and reminders.',
@@ -87,11 +88,11 @@ export const secondaryProjects: readonly Project[] = [
   {
     slug: 'transporterr',
     title: 'Transporterr',
-    type: 'Fleet management SaaS',
+    type: 'AI workflow product',
     role: 'Creator and Full-stack Engineer',
-    summary: 'A multi-tenant fleet management platform spanning web, API, and driver workflows.',
-    outcome: 'Established shared web, backend, mobile, and infrastructure foundations in one monorepo.',
-    skills: ['Angular', 'Spring Boot', 'PostgreSQL', 'React Native'],
+    summary: 'An operational workflow product that turns uploaded documents into structured, reviewable data.',
+    outcome: 'Built AI-assisted document parsing, confidence review, and export workflows.',
+    skills: ['Angular', 'Spring Boot', 'PostgreSQL', 'Gemini'],
     coverImage: 'images/projects/transporterr-ai-document-workflow.webp',
     coverAlt:
       'Transporterr workflow showing document upload, AI extraction, structured data review, confidence scoring, and export.',

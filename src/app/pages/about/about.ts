@@ -14,7 +14,7 @@ import { SkillGroup } from '../../ui/skill-group/skill-group';
 export class About {
   protected readonly skillGroups = skillGroups;
   protected readonly technicalStrengths = [
-    'Frontend architecture',
+    'Frontend architecture and micro frontends',
     'Angular and TypeScript applications',
     'Design systems and reusable components',
     'Accessible, responsive interfaces',
@@ -30,15 +30,19 @@ export class About {
   protected readonly experience = [
     {
       heading: 'B2B SaaS and enterprise systems',
-      text: 'ERP integration journeys, product analytics foundations, and reliable release workflows for complex web applications.',
+      text: 'ERP integration journeys, product analytics foundations, Angular micro frontends, and reliable release workflows for complex web applications.',
     },
     {
       heading: 'Insurance and fintech products',
-      text: 'User-facing journeys and data-heavy interfaces where clarity, accuracy, and dependable behavior matter.',
+      text: 'Mobile and web journeys across onboarding, contracts, and support for an insurance platform serving 700k+ users.',
     },
     {
       heading: 'Healthcare applications',
-      text: 'Administrative dashboards and workflows designed to make complex operational information easier to use.',
+      text: 'Administrative dashboards, reusable design systems, and patient workflows for doctors, coaches, and care teams.',
+    },
+    {
+      heading: 'Technical leadership',
+      text: 'Mentoring engineers, strengthening code review practices, and documenting architecture decisions for distributed teams.',
     },
   ];
 }

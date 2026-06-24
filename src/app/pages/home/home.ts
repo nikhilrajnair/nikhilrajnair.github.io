@@ -30,7 +30,7 @@ export class Home {
   protected readonly projects = projects;
   protected readonly writings = writings.slice(0, 2);
   protected readonly workAreas = [
-    'Frontend architecture',
+    'Frontend architecture and micro frontends',
     'Angular and TypeScript applications',
     'Design systems and reusable components',
     'Product analytics and tracking',

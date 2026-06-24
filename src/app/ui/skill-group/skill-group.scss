@@ -7,8 +7,35 @@ section {
   border-top: 1px solid var(--color-border);
 }
 
-h3 {
+.heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   margin-bottom: var(--space-5);
+}
+
+.icon {
+  display: grid;
+  width: 2rem;
+  flex: 0 0 2rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-subtle);
+}
+
+.icon svg {
+  width: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+h3 {
   font-size: var(--font-size-base);
 }
 

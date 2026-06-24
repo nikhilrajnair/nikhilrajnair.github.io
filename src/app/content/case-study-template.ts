@@ -212,4 +212,93 @@ export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
     ],
     visuals: [caseStudyVisuals.productAnalytics],
   },
+  'frontend-quality-release-automation': {
+    summary:
+      'Introduced Playwright E2E coverage and automated Angular micro-frontend releases to make delivery faster and more dependable.',
+    context:
+      'The work supported an Angular-based B2B SaaS product with independently delivered frontend packages and business-critical ERP integration journeys.',
+    problem:
+      'Manual versioning and release steps slowed delivery, while critical workflows lacked a reliable automated regression layer.',
+    role:
+      'Senior frontend engineer responsible for the testing strategy, Playwright setup, release automation, shared conventions, and Azure DevOps delivery improvements.',
+    constraints: [
+      'The release workflow needed to work across independently versioned Angular packages.',
+      'E2E coverage had to focus on high-value user journeys without making the pipeline slow or brittle.',
+      'Automation needed to fit the existing Azure DevOps workflow and team conventions.',
+    ],
+    approach: [
+      'Identified the user journeys with the highest regression risk.',
+      'Introduced Playwright and established reusable E2E patterns from scratch.',
+      'Standardized commits, versioning, changelogs, and releases with commitlint and semantic-release.',
+      'Connected quality checks and release automation through Azure DevOps.',
+    ],
+    decisions: [
+      {
+        heading: 'Test business-critical journeys first',
+        text: 'Coverage focused on workflows where a regression would have the greatest customer and delivery impact.',
+      },
+      {
+        heading: 'Automate the release contract',
+        text: 'Conventional commits and semantic-release replaced manual versioning and changelog work with a repeatable process.',
+      },
+      {
+        heading: 'Keep feedback actionable',
+        text: 'Pipeline checks were structured to show teams what failed and where to recover without adding unnecessary ceremony.',
+      },
+    ],
+    outcomes: [
+      'Improved release confidence by 30%+ through Playwright E2E testing.',
+      'Reduced release cycle time by approximately 50% through release automation.',
+      'Reduced regression risk across ERP integration workflows.',
+    ],
+    learned:
+      'Release automation works best when testing, versioning, and developer feedback are treated as one delivery system rather than separate tools.',
+    tech: ['Angular', 'TypeScript', 'Playwright', 'semantic-release', 'commitlint', 'Azure DevOps'],
+    visuals: [caseStudyVisuals.releaseAutomation],
+  },
+  'insurance-user-journeys': {
+    summary:
+      'Improved mobile and web journeys across onboarding, contracts, home, and support for a large-scale insurance platform.',
+    context:
+      'The work supported a customer-facing insurance platform serving 700k+ users across mobile and web experiences.',
+    problem:
+      'Users needed clearer, more dependable paths through acquisition, contract management, personalized actions, and support.',
+    role:
+      'Frontend engineer responsible for user journeys, responsive UI, conditional flows, analytics tracking, automated tests, and mobile platform fixes.',
+    constraints: [
+      'Journeys needed to behave consistently across web, iOS, and mobile web contexts.',
+      'Changes had to coexist with legacy business logic, feature flags, deep links, and third-party support tooling.',
+      'Product decisions were validated through analytics and A/B testing rather than confidential screenshots or internal data.',
+    ],
+    approach: [
+      'Mapped friction across onboarding, home, contract, and support journeys.',
+      'Built guided steps, loading states, confirmation patterns, and clearer recovery feedback.',
+      'Added analytics tracking and supported A/B-tested improvements.',
+      'Refactored reusable business logic and removed obsolete feature toggles where appropriate.',
+      'Resolved mobile-specific issues involving iOS, Safari, keyboards, notifications, and support chat.',
+    ],
+    decisions: [
+      {
+        heading: 'Design the journey, not isolated screens',
+        text: 'Entry points, conditional steps, confirmation, and recovery were considered as one continuous experience.',
+      },
+      {
+        heading: 'Use evidence to prioritize changes',
+        text: 'Analytics and experiments helped focus iteration on journeys with measurable engagement impact.',
+      },
+      {
+        heading: 'Reduce legacy friction while shipping',
+        text: 'Reusable services and removal of obsolete toggles improved maintainability alongside customer-facing work.',
+      },
+    ],
+    outcomes: [
+      'Supported production mobile and web workflows for a platform serving 700k+ users.',
+      'Improved engagement by approximately 50% across tested onboarding, home, contract, and support flows.',
+      'Reduced frontend maintenance effort by approximately 30% through modularization and cleanup.',
+    ],
+    learned:
+      'High-impact journey improvements come from combining product evidence, careful cross-platform behavior, and steady reduction of legacy complexity.',
+    tech: ['Ember.js', 'TypeScript', 'Capacitor', 'REST APIs', 'Analytics tracking', 'A/B testing'],
+    visuals: [caseStudyVisuals.insuranceJourney],
+  },
 };

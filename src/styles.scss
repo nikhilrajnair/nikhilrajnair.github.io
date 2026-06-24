@@ -247,7 +247,7 @@ button {
 
 .focus-grid li {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   gap: var(--space-3);
   padding-block: var(--space-5);
   border-top: 1px solid var(--color-border);
@@ -256,10 +256,20 @@ button {
 }
 
 .focus-grid li::before {
-  content: '—';
+  display: grid;
+  width: 1.25rem;
+  flex: 0 0 1.25rem;
+  aspect-ratio: 1;
+  place-items: center;
+  margin-top: 0.2rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-accent) 5%, var(--color-surface));
   color: var(--color-accent);
-  flex-shrink: 0;
-  font-weight: var(--font-weight-normal);
+  content: '✓';
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
 }
 
 .writing-preview {

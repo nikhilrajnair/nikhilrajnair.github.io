@@ -15,7 +15,7 @@
 .principle-grid h3,
 .experience-list h3 {
   margin-bottom: var(--space-3);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 .principle-grid p,
@@ -39,6 +39,23 @@
   max-width: var(--content-copy);
 }
 
+.skill-grid app-skill-group {
+  min-width: 0;
+  padding-inline: var(--space-6);
+}
+
+.skill-grid app-skill-group:first-child {
+  padding-left: 0;
+}
+
+.skill-grid app-skill-group:last-child {
+  padding-right: 0;
+}
+
+.skill-grid app-skill-group + app-skill-group {
+  border-left: 1px solid var(--color-border);
+}
+
 @media (max-width: 48rem) {
   .principle-grid {
     grid-template-columns: 1fr;
@@ -52,5 +69,10 @@
   .experience-list article {
     grid-template-columns: 1fr;
     gap: var(--space-2);
+  }
+
+  .skill-grid app-skill-group {
+    padding-inline: 0;
+    border-left: 0;
   }
 }
