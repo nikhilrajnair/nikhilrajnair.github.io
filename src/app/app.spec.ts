@@ -30,7 +30,7 @@ describe('App', () => {
   });
 
   it('should link every case study through the existing detail route', () => {
-    expect(projects.every((project) => project.detailPath === `/work/${project.slug}`)).toBeTrue();
+    expect(projects.every((project) => project.detailPath === `/work/${project.slug}`)).toBe(true);
   });
 
   it('should define all NDA-safe visual presets', () => {
@@ -40,17 +40,17 @@ describe('App', () => {
       'releaseAutomation',
       'insuranceJourney',
     ]);
-    expect(Object.values(caseStudyVisuals).every((visual) => visual.items.length > 0)).toBeTrue();
+    expect(Object.values(caseStudyVisuals).every((visual) => visual.items.length > 0)).toBe(true);
   });
 
   it('should use accessible public-folder paths for case study covers', () => {
     const covers = [...projects, ...secondaryProjects].filter((project) => project.coverImage);
 
     expect(covers.length).toBe(9);
-    expect(covers.every((project) => project.coverImage?.startsWith('images/'))).toBeTrue();
-    expect(covers.every((project) => !project.coverImage?.includes('public/'))).toBeTrue();
-    expect(covers.every((project) => !project.coverImage?.includes('src/assets/'))).toBeTrue();
-    expect(covers.every((project) => project.coverAlt?.trim())).toBeTrue();
+    expect(covers.every((project) => project.coverImage?.startsWith('images/'))).toBe(true);
+    expect(covers.every((project) => !project.coverImage?.includes('public/'))).toBe(true);
+    expect(covers.every((project) => !project.coverImage?.includes('src/assets/'))).toBe(true);
+    expect(covers.every((project) => project.coverAlt?.trim())).toBe(true);
   });
 
   it('should render working case links and honest project availability', async () => {
@@ -76,15 +76,15 @@ describe('App', () => {
     expect(caseStudyLinks.length).toBe(projects.length);
     expect(
       caseStudyLinks.every((link) => link.textContent?.trim() === 'View case study'),
-    ).toBeTrue();
+    ).toBe(true);
     expect(
       projectLinks.every((link) => link.textContent?.trim().startsWith('View project')),
-    ).toBeTrue();
-    expect(projectLinks.every((link) => link.getAttribute('href'))).toBeTrue();
+    ).toBe(true);
+    expect(projectLinks.every((link) => link.getAttribute('href'))).toBe(true);
     expect(unavailableProjects.length).toBe(secondaryProjects.length - projectLinks.length);
     expect(
       unavailableProjects.every((project) => project.textContent?.trim() === 'Details coming soon'),
-    ).toBeTrue();
+    ).toBe(true);
 
     for (const project of projects) {
       await harness.navigateByUrl(project.detailPath!);
