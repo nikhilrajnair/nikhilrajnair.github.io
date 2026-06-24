@@ -1,9 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-skill-group',
   imports: [],
   templateUrl: './skill-group.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './skill-group.scss',
 })
 export class SkillGroup {

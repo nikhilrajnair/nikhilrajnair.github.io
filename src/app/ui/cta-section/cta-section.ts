@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, input } from '@angular/core';
+import { booleanAttribute, Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Button } from '../button/button';
 import { Container } from '../container/container';
@@ -7,6 +7,7 @@ import { Container } from '../container/container';
   selector: 'app-cta-section',
   imports: [Button, Container, RouterLink],
   templateUrl: './cta-section.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './cta-section.scss',
 })
 export class CtaSection {

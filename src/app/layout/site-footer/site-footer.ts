@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Container } from '../../ui/container/container';
 
@@ -6,6 +6,7 @@ import { Container } from '../../ui/container/container';
   selector: 'app-site-footer',
   imports: [Container, RouterLink],
   templateUrl: './site-footer.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './site-footer.scss',
 })
 export class SiteFooter {

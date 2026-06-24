@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { skillGroups } from '../../content/skills';
 import { Container } from '../../ui/container/container';
 import { CtaSection } from '../../ui/cta-section/cta-section';
@@ -9,6 +9,7 @@ import { SkillGroup } from '../../ui/skill-group/skill-group';
   selector: 'app-about',
   imports: [Container, CtaSection, Section, SkillGroup],
   templateUrl: './about.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './about.scss',
 })
 export class About {

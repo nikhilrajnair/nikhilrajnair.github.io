@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { caseStudies, caseStudyTemplate } from '../../content/case-study-template';
 import { Project, projects } from '../../content/projects';
@@ -20,6 +20,7 @@ const placeholderProject: Project = {
   selector: 'app-case-study',
   imports: [Badge, Button, CaseStudyVisual, Container, RouterLink],
   templateUrl: './case-study.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './case-study.scss',
 })
 export class CaseStudy {

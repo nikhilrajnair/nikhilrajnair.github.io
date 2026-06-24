@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Project } from '../../content/projects';
 import { Badge } from '../badge/badge';
@@ -7,6 +7,7 @@ import { Badge } from '../badge/badge';
   selector: 'app-case-study-card',
   imports: [Badge, RouterLink],
   templateUrl: './case-study-card.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './case-study-card.scss',
 })
 export class CaseStudyCard {

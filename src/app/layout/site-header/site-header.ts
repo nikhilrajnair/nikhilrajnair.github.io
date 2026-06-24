@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Button } from '../../ui/button/button';
 import { Container } from '../../ui/container/container';
@@ -7,6 +7,7 @@ import { Container } from '../../ui/container/container';
   selector: 'app-site-header',
   imports: [Button, Container, RouterLink, RouterLinkActive],
   templateUrl: './site-header.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './site-header.scss',
 })
 export class SiteHeader {}

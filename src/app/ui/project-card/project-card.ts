@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, input } from '@angular/core';
+import { booleanAttribute, Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Project } from '../../content/projects';
 import { Badge } from '../badge/badge';
@@ -9,6 +9,7 @@ import { Button } from '../button/button';
   imports: [Badge, Button, RouterLink],
   templateUrl: './project-card.html',
   styleUrl: './project-card.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     '[class.compact]': 'compact()',
   },

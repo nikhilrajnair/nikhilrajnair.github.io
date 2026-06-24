@@ -1,10 +1,11 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { CaseStudyVisualVariant } from '../../content/case-study-template';
 
 @Component({
   selector: 'app-case-study-visual',
   imports: [],
   templateUrl: './case-study-visual.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './case-study-visual.scss',
 })
 export class CaseStudyVisual {

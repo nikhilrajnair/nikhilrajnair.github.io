@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { projects } from '../../content/projects';
 import { writings } from '../../content/writings';
@@ -24,6 +24,7 @@ import { WritingCard } from '../../ui/writing-card/writing-card';
     Section,
     WritingCard,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './home.html',
 })
 export class Home {

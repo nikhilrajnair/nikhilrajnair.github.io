@@ -1,9 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-metric-card',
   imports: [],
   templateUrl: './metric-card.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './metric-card.scss',
 })
 export class MetricCard {
