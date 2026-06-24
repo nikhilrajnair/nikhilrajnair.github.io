@@ -314,13 +314,40 @@ button {
     padding-block: var(--space-8) var(--space-6);
   }
 
+  .hero h1 {
+    font-size: 2.25rem;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+
+  .hero .lede {
+    font-size: var(--font-size-base);
+  }
+
   .actions {
-    align-items: stretch;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+    margin-top: var(--space-5);
   }
 
   .actions a {
     width: 100%;
+    padding-inline: var(--space-3);
+  }
+
+  .page-intro {
+    padding-block: var(--space-10);
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+
+  .focus-grid li {
+    padding-block: var(--space-4);
+    font-size: var(--font-size-base);
   }
 }
 

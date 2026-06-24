@@ -55,11 +55,28 @@ nav a:hover {
 }
 
 @media (max-width: 40rem) {
+  footer {
+    padding-block: var(--space-10) var(--space-6);
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  nav {
+    gap: 0 var(--space-6);
+  }
+
+  nav a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
   }
 
   .footer-note {
+    margin-top: var(--space-8);
     flex-direction: column;
+    gap: var(--space-2);
   }
 }

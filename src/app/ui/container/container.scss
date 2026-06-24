@@ -6,6 +6,6 @@
 
 @media (max-width: 34rem) {
   :host {
-    width: min(calc(100% - var(--space-5)), var(--content-wide));
+    width: min(calc(100% - var(--space-8)), var(--content-wide));
   }
 }

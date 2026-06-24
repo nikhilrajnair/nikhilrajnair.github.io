@@ -99,7 +99,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin: var(--space-3) 0 0;
+  margin: var(--space-2) 0;
   padding: 0;
   list-style: none;
 }
@@ -197,7 +197,23 @@ a,
 @media (max-width: 36rem) {
   article,
   :host(.compact) article {
-    padding: var(--space-5);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+  }
+
+  .cover-image {
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  h3 {
+    margin-block: var(--space-4) var(--space-2);
+    font-size: 1.3rem;
+  }
+
+  .impact,
+  :host(:not(.compact)) .stack {
+    margin-top: var(--space-4);
   }
 
   a,
@@ -207,6 +223,8 @@ a,
 
   .case-link {
     width: fit-content;
+    min-height: 2.75rem;
+    align-items: center;
   }
 }
 

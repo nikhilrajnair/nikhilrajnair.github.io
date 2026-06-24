@@ -32,3 +32,18 @@ p {
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
 }
+
+@media (max-width: 34rem) {
+  article {
+    padding: var(--space-4);
+  }
+
+  strong {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-xs);
+  }
+}
