@@ -1,11 +1,11 @@
 import { Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { caseStudies, caseStudyTemplate } from '../../content/case-study-template';
-import { Project, projects } from '../../content/projects';
-import { Badge } from '../../ui/badge/badge';
-import { Button } from '../../ui/button/button';
-import { CaseStudyVisual } from '../../ui/case-study-visual/case-study-visual';
-import { Container } from '../../ui/container/container';
+import { caseStudies, caseStudyTemplate } from '@content/case-study-template';
+import { Project, projects } from '@content/projects';
+import { Badge } from '@ui/badge/badge';
+import { Button } from '@ui/button/button';
+import { CaseStudyVisual } from '@ui/case-study-visual/case-study-visual';
+import { Container } from '@ui/container/container';
 
 const placeholderProject: Project = {
   slug: 'template',
@@ -20,7 +20,7 @@ const placeholderProject: Project = {
   selector: 'app-case-study',
   imports: [Badge, Button, CaseStudyVisual, Container, RouterLink],
   templateUrl: './case-study.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './case-study.scss',
 })
 export class CaseStudy {

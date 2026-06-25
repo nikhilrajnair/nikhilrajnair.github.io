@@ -7,19 +7,12 @@
     "build": "ng build",
     "build:pages": "ng build --configuration production --output-path docs --base-href / && cp -R docs/browser/. docs/ && rm -rf docs/browser docs/prerendered-routes.json",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
+    "test": "ng test",
+    "lint": "eslint .",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "check": "npm run lint && npm run lint:styles && npm run format:check"
   },
   "private": true,
   "dependencies": {
@@ -36,9 +29,16 @@
     "@angular/build": "^22.0.3",
     "@angular/cli": "^22.0.3",
     "@angular/compiler-cli": "^22.0.2",
+    "@eslint/js": "^10.0.1",
+    "angular-eslint": "^22.0.0",
+    "eslint": "^10.5.0",
     "istanbul-lib-instrument": "^6.0.3",
     "jsdom": "^29.1.1",
+    "prettier": "^3.8.4",
+    "stylelint": "^17.13.0",
+    "stylelint-config-standard-scss": "^17.0.0",
     "typescript": "~6.0.3",
+    "typescript-eslint": "^8.62.0",
     "vitest": "^4.0.8"
   }
 }

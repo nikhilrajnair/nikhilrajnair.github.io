@@ -4,7 +4,7 @@ import { Component, input, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-skill-group',
   imports: [],
   templateUrl: './skill-group.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './skill-group.scss',
 })
 export class SkillGroup {

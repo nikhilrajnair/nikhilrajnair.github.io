@@ -12,7 +12,15 @@
         <a appButton routerLink="/work">View Work</a>
         <a appButton variant="secondary" routerLink="/writing">Read Writing</a>
         <a appButton variant="secondary" href="mailto:nikhilrajnair.a@gmail.com">Contact Me</a>
-        <a appButton variant="secondary" href="https://linkedin.com/in/nikhilrajnair" target="_blank" rel="noreferrer" aria-label="LinkedIn profile (opens in a new tab)">LinkedIn ↗</a>
+        <a
+          appButton
+          variant="secondary"
+          href="https://linkedin.com/in/nikhilrajnair"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn profile (opens in a new tab)"
+          >LinkedIn ↗</a
+        >
       </div>
     </div>
   </section>
@@ -25,8 +33,14 @@
 >
   <div class="metric-grid">
     <app-metric-card value="9+" label="Years of frontend engineering experience" />
-    <app-metric-card value="700k+" label="Users reached through production web and mobile workflows" />
-    <app-metric-card value="30%+" label="Improved release confidence through Playwright E2E testing" />
+    <app-metric-card
+      value="700k+"
+      label="Users reached through production web and mobile workflows"
+    />
+    <app-metric-card
+      value="30%+"
+      label="Improved release confidence through Playwright E2E testing"
+    />
     <app-metric-card value="~50%" label="Reduced release cycle time through automation" />
   </div>
 </app-section>
@@ -46,10 +60,7 @@
   </div>
 </app-section>
 
-<app-section
-  eyebrow="What I work on"
-  heading="The useful parts of modern frontend engineering."
->
+<app-section eyebrow="What I work on" heading="The useful parts of modern frontend engineering.">
   <ul class="focus-grid">
     @for (area of workAreas; track area) {
       <li>{{ area }}</li>
@@ -70,10 +81,7 @@
   <a appButton variant="secondary" routerLink="/writing">Read all writing</a>
 </app-section>
 
-<app-section
-  eyebrow="About"
-  heading="Product judgment, backed by engineering depth."
->
+<app-section eyebrow="About" heading="Product judgment, backed by engineering depth.">
   <div class="about-preview">
     <p>
       I work across design, architecture, implementation, testing, and delivery to make complex

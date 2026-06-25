@@ -1,15 +1,15 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { skillGroups } from '../../content/skills';
-import { Container } from '../../ui/container/container';
-import { CtaSection } from '../../ui/cta-section/cta-section';
-import { Section } from '../../ui/section/section';
-import { SkillGroup } from '../../ui/skill-group/skill-group';
+import { skillGroups } from '@content/skills';
+import { Container } from '@ui/container/container';
+import { CtaSection } from '@ui/cta-section/cta-section';
+import { Section } from '@ui/section/section';
+import { SkillGroup } from '@ui/skill-group/skill-group';
 
 @Component({
   selector: 'app-about',
   imports: [Container, CtaSection, Section, SkillGroup],
   templateUrl: './about.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './about.scss',
 })
 export class About {

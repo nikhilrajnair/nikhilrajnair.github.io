@@ -78,7 +78,8 @@ export const secondaryProjects: readonly Project[] = [
     title: 'OZO',
     type: 'Product project',
     role: 'Creator',
-    summary: 'A consumer app for organizing invoices, warranties, memberships, and renewal reminders.',
+    summary:
+      'A consumer app for organizing invoices, warranties, memberships, and renewal reminders.',
     outcome: 'Built reusable mobile and admin workflows with deep linking and structured records.',
     skills: ['React Native', 'React', 'TypeScript'],
     coverImage: 'images/projects/ozo-side-project.webp',
@@ -90,7 +91,8 @@ export const secondaryProjects: readonly Project[] = [
     title: 'Transporterr',
     type: 'AI workflow product',
     role: 'Creator and Full-stack Engineer',
-    summary: 'An operational workflow product that turns uploaded documents into structured, reviewable data.',
+    summary:
+      'An operational workflow product that turns uploaded documents into structured, reviewable data.',
     outcome: 'Built AI-assisted document parsing, confidence review, and export workflows.',
     skills: ['Angular', 'Spring Boot', 'PostgreSQL', 'Gemini'],
     coverImage: 'images/projects/transporterr-ai-document-workflow.webp',
@@ -102,7 +104,8 @@ export const secondaryProjects: readonly Project[] = [
     title: 'ng-track-event-directive',
     type: 'Open source',
     role: 'Creator and Maintainer',
-    summary: 'A lightweight Angular directive for declarative click, hover, and view analytics events.',
+    summary:
+      'A lightweight Angular directive for declarative click, hover, and view analytics events.',
     outcome: 'Adapter-based integration for Mixpanel, Segment, GA4, or custom analytics backends.',
     skills: ['Angular', 'TypeScript', 'IntersectionObserver'],
     coverImage: 'images/projects/ng-track-event-directive.webp',
@@ -115,7 +118,8 @@ export const secondaryProjects: readonly Project[] = [
     title: 'Healthcare Admin Dashboards',
     type: 'Healthcare',
     role: 'Senior Frontend Engineer',
-    summary: 'Operational dashboards for doctors, health coaches, administrators, and patient analytics.',
+    summary:
+      'Operational dashboards for doctors, health coaches, administrators, and patient analytics.',
     outcome: 'Supported digital therapeutics products across EPAC, APAC, and the USA.',
     skills: ['Angular', 'Angular Material', 'RxJS', 'Google Charts'],
     coverImage: 'images/projects/healthcare-admin-dashboard.webp',
@@ -127,7 +131,8 @@ export const secondaryProjects: readonly Project[] = [
     title: 'Asset Management Platform',
     type: 'Enterprise',
     role: 'Lead Frontend Engineer',
-    summary: 'An Angular application for enterprise asset management workflows and data-heavy interfaces.',
+    summary:
+      'An Angular application for enterprise asset management workflows and data-heavy interfaces.',
     outcome: 'Improved load speed by 20% through lazy loading and change-detection optimization.',
     skills: ['Angular', 'TypeScript', 'RxJS', 'Syncfusion'],
     coverImage: 'images/projects/asset-management-platform.webp',

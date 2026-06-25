@@ -39,7 +39,8 @@ export const writings: readonly Writing[] = [
     slug: 'erp-integration-workflows',
     title: 'What I learned from building ERP integration workflows',
     category: 'Angular and TypeScript',
-    summary: 'Lessons from designing guided setup, redirect handling, and resilient connection states.',
+    summary:
+      'Lessons from designing guided setup, redirect handling, and resilient connection states.',
     published: 'Coming soon',
     readingTime: '6 min read',
   },
@@ -55,7 +56,8 @@ export const writings: readonly Writing[] = [
     slug: 'visible-frontend-engineering',
     title: 'Making frontend work visible through better engineering documentation',
     category: 'Frontend Architecture',
-    summary: 'Simple documentation practices that make decisions, trade-offs, and progress easier to see.',
+    summary:
+      'Simple documentation practices that make decisions, trade-offs, and progress easier to see.',
     published: 'Coming soon',
     readingTime: '4 min read',
   },
@@ -63,7 +65,8 @@ export const writings: readonly Writing[] = [
     slug: 'ai-tools-daily-engineering',
     title: 'How I use AI tools in daily engineering work',
     category: 'AI-Assisted Engineering',
-    summary: 'A grounded workflow for using AI to explore, implement, review, and document frontend work.',
+    summary:
+      'A grounded workflow for using AI to explore, implement, review, and document frontend work.',
     published: 'Coming soon',
     readingTime: '5 min read',
   },
@@ -71,7 +74,8 @@ export const writings: readonly Writing[] = [
     slug: 'nda-safe-case-studies',
     title: 'Designing NDA-safe case studies as a frontend engineer',
     category: 'Career Notes',
-    summary: 'How to communicate context, decisions, and impact without exposing confidential details.',
+    summary:
+      'How to communicate context, decisions, and impact without exposing confidential details.',
     published: 'Coming soon',
     readingTime: '4 min read',
   },

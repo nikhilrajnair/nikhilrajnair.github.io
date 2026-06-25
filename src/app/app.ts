@@ -1,13 +1,13 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SiteFooter } from './layout/site-footer/site-footer';
-import { SiteHeader } from './layout/site-header/site-header';
+import { SiteFooter } from '@layout/site-footer/site-footer';
+import { SiteHeader } from '@layout/site-header/site-header';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, SiteFooter, SiteHeader],
   templateUrl: './app.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './app.scss',
 })
 export class App {}

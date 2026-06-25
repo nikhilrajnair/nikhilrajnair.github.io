@@ -6,8 +6,14 @@
       <h1>{{ project().title }}</h1>
       <p class="lede">{{ content().summary }}</p>
       <dl>
-        <div><dt>Role</dt><dd>{{ content().role }}</dd></div>
-        <div><dt>Format</dt><dd>NDA-safe case study</dd></div>
+        <div>
+          <dt>Role</dt>
+          <dd>{{ content().role }}</dd>
+        </div>
+        <div>
+          <dt>Format</dt>
+          <dd>NDA-safe case study</dd>
+        </div>
       </dl>
     </header>
 
@@ -26,7 +32,10 @@
 
     <aside class="nda-note" aria-label="Confidentiality note">
       <strong>NDA-safe presentation</strong>
-      <p>This case study uses approved public summaries and abstract visuals. Client names, internal screenshots, account data, and proprietary workflows are intentionally omitted.</p>
+      <p>
+        This case study uses approved public summaries and abstract visuals. Client names, internal
+        screenshots, account data, and proprietary workflows are intentionally omitted.
+      </p>
     </aside>
 
     <div class="story-grid">
@@ -64,7 +73,10 @@
       <h2>How I approached it</h2>
       <ol class="approach-list">
         @for (step of content().approach; track step; let index = $index) {
-          <li><span>{{ index + 1 }}</span><p>{{ step }}</p></li>
+          <li>
+            <span>{{ index + 1 }}</span>
+            <p>{{ step }}</p>
+          </li>
         }
       </ol>
     </section>
@@ -72,7 +84,9 @@
     <section class="story-section">
       <p class="eyebrow">Abstract visuals</p>
       <h2>System flow at a glance</h2>
-      <p class="section-intro">A deliberately abstract view of the system, with no client or product data.</p>
+      <p class="section-intro">
+        A deliberately abstract view of the system, with no client or product data.
+      </p>
       <div class="visual-grid">
         @for (visual of content().visuals; track visual.variant) {
           <app-case-study-visual

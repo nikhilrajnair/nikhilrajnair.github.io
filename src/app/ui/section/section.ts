@@ -1,11 +1,11 @@
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
-import { Container } from '../container/container';
+import { Container } from '@ui/container/container';
 
 @Component({
   selector: 'app-section',
   imports: [Container],
   templateUrl: './section.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './section.scss',
 })
 export class Section {

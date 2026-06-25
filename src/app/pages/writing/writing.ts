@@ -1,12 +1,12 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { writings } from '../../content/writings';
-import { Container } from '../../ui/container/container';
-import { WritingCard } from '../../ui/writing-card/writing-card';
+import { writings } from '@content/writings';
+import { Container } from '@ui/container/container';
+import { WritingCard } from '@ui/writing-card/writing-card';
 
 @Component({
   selector: 'app-writing',
   imports: [Container, WritingCard],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './writing.html',
 })
 export class Writing {

@@ -5,10 +5,26 @@ export const skillGroups = [
   },
   {
     heading: 'Quality and systems',
-    skills: ['Micro frontends', 'Design systems', 'Accessibility', 'Performance', 'Playwright', 'Vitest' , 'Storybook'],
+    skills: [
+      'Micro frontends',
+      'Design systems',
+      'Accessibility',
+      'Performance',
+      'Playwright',
+      'Vitest',
+      'Storybook',
+    ],
   },
   {
     heading: 'Product and delivery',
-    skills: ['Mixpanel', 'REST APIs', 'CI/CD', 'Azure DevOps', 'AWS' , 'semantic-release', 'AI-assisted workflows'],
+    skills: [
+      'Mixpanel',
+      'REST APIs',
+      'CI/CD',
+      'Azure DevOps',
+      'AWS',
+      'semantic-release',
+      'AI-assisted workflows',
+    ],
   },
 ] as const;

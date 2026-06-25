@@ -4,7 +4,7 @@ import { Component, input, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-metric-card',
   imports: [],
   templateUrl: './metric-card.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './metric-card.scss',
 })
 export class MetricCard {

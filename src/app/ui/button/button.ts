@@ -5,7 +5,7 @@ import { Component, input, ChangeDetectionStrategy } from '@angular/core';
   imports: [],
   templateUrl: './button.html',
   styleUrl: './button.scss',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[class.secondary]': "variant() === 'secondary'",
   },

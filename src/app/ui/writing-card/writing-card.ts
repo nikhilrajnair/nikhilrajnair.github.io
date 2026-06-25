@@ -1,12 +1,12 @@
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
-import { Writing } from '../../content/writings';
-import { Badge } from '../badge/badge';
+import { Writing } from '@content/writings';
+import { Badge } from '@ui/badge/badge';
 
 @Component({
   selector: 'app-writing-card',
   imports: [Badge],
   templateUrl: './writing-card.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './writing-card.scss',
 })
 export class WritingCard {

@@ -63,8 +63,7 @@ export const caseStudyTemplate: CaseStudyContent = {
     'Describe the product area and audience using only approved, public information. Keep client and account names out unless publication is explicitly permitted.',
   problem:
     'State the user or engineering problem at a useful level of abstraction. Focus on the shape of the challenge, not confidential workflows or internal data.',
-  role:
-    'Summarize your responsibilities, collaborators, and decision scope without naming private teams, stakeholders, or organizational details.',
+  role: 'Summarize your responsibilities, collaborators, and decision scope without naming private teams, stakeholders, or organizational details.',
   constraints: [
     'Replace this with an approved technical, product, or delivery constraint.',
     'Use ranges or qualitative language when exact scale is confidential.',
@@ -116,8 +115,7 @@ export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
       'This was part of a B2B SaaS product for machine manufacturers managing complex spare-parts pricing workflows across large SKU datasets.',
     problem:
       'Enterprise customers needed a clearer way to connect ERP systems, understand setup progress, recover from errors, and monitor sync status without relying heavily on manual support.',
-    role:
-      'Senior frontend and product engineer responsible for the Angular frontend experience, UI states, redirect handling, dashboard visibility, error feedback, API integration, testing, and delivery quality.',
+    role: 'Senior frontend and product engineer responsible for the Angular frontend experience, UI states, redirect handling, dashboard visibility, error feedback, API integration, testing, and delivery quality.',
     constraints: [
       'The setup journey handed users into a Workato-powered connector flow and then redirected them back into the product.',
       'The dashboard needed to represent connection health, sync errors, missing data, and manual actions clearly.',
@@ -169,8 +167,7 @@ export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
       'The work established a shared frontend analytics foundation across key product flows and connected implementation standards with stakeholder-facing dashboards.',
     problem:
       'Product teams needed consistent event tracking and better visibility into user behavior, funnels, and drop-off points.',
-    role:
-      'Designed the frontend tracking architecture, created reusable Angular tooling, defined tracking standards, and supported dashboard setup with stakeholders.',
+    role: 'Designed the frontend tracking architecture, created reusable Angular tooling, defined tracking standards, and supported dashboard setup with stakeholders.',
     constraints: [
       'Tracking needed to stay consistent across different UI interactions and product flows.',
       'The Angular integration needed to be reusable instead of coupling analytics logic to individual components.',
@@ -219,8 +216,7 @@ export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
       'The work supported an Angular-based B2B SaaS product with independently delivered frontend packages and business-critical ERP integration journeys.',
     problem:
       'Manual versioning and release steps slowed delivery, while critical workflows lacked a reliable automated regression layer.',
-    role:
-      'Senior frontend engineer responsible for the testing strategy, Playwright setup, release automation, shared conventions, and Azure DevOps delivery improvements.',
+    role: 'Senior frontend engineer responsible for the testing strategy, Playwright setup, release automation, shared conventions, and Azure DevOps delivery improvements.',
     constraints: [
       'The release workflow needed to work across independently versioned Angular packages.',
       'E2E coverage had to focus on high-value user journeys without making the pipeline slow or brittle.',
@@ -263,8 +259,7 @@ export const caseStudies: Readonly<Record<string, CaseStudyContent>> = {
       'The work supported a customer-facing insurance platform serving 700k+ users across mobile and web experiences.',
     problem:
       'Users needed clearer, more dependable paths through acquisition, contract management, personalized actions, and support.',
-    role:
-      'Frontend engineer responsible for user journeys, responsive UI, conditional flows, analytics tracking, automated tests, and mobile platform fixes.',
+    role: 'Frontend engineer responsible for user journeys, responsive UI, conditional flows, analytics tracking, automated tests, and mobile platform fixes.',
     constraints: [
       'Journeys needed to behave consistently across web, iOS, and mobile web contexts.',
       'Changes had to coexist with legacy business logic, feature flags, deep links, and third-party support tooling.',

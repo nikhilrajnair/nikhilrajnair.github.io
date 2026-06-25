@@ -8,8 +8,8 @@ const endpoint = `https://dev.to/api/articles?username=${encodeURIComponent(user
 async function fetchArticles() {
   const response = await fetch(endpoint, {
     headers: {
-      'User-Agent': 'portfolio-build-script'
-    }
+      'User-Agent': 'portfolio-build-script',
+    },
   });
 
   if (!response.ok) {
@@ -24,7 +24,7 @@ async function fetchArticles() {
     url: article.url,
     publishedAt: article.published_at,
     coverImage: article.cover_image,
-    tags: article.tag_list || []
+    tags: article.tag_list || [],
   }));
 }
 

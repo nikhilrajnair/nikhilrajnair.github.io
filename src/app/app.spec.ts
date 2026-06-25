@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter, Router, withComponentInputBinding } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
-import { App } from './app';
-import { routes } from './app.routes';
-import { caseStudyVisuals } from './content/case-study-template';
-import { projects, secondaryProjects } from './content/projects';
+import { App } from '@app/app';
+import { routes } from '@app/app.routes';
+import { caseStudyVisuals } from '@content/case-study-template';
+import { projects, secondaryProjects } from '@content/projects';
 
 describe('App', () => {
   beforeEach(async () => {
@@ -74,12 +74,12 @@ describe('App', () => {
       ) ?? [],
     );
     expect(caseStudyLinks.length).toBe(projects.length);
-    expect(
-      caseStudyLinks.every((link) => link.textContent?.trim() === 'View case study'),
-    ).toBe(true);
-    expect(
-      projectLinks.every((link) => link.textContent?.trim().startsWith('View project')),
-    ).toBe(true);
+    expect(caseStudyLinks.every((link) => link.textContent?.trim() === 'View case study')).toBe(
+      true,
+    );
+    expect(projectLinks.every((link) => link.textContent?.trim().startsWith('View project'))).toBe(
+      true,
+    );
     expect(projectLinks.every((link) => link.getAttribute('href'))).toBe(true);
     expect(unavailableProjects.length).toBe(secondaryProjects.length - projectLinks.length);
     expect(
