@@ -37,9 +37,12 @@
   intro="Selected work across platform architecture, analytics, delivery quality, and user journeys."
 >
   <div class="card-grid home-projects">
-    @for (project of projects; track project.slug) {
+    @for (project of featuredProjects; track project.slug) {
       <app-project-card [project]="project" />
     }
+  </div>
+  <div class="section-actions">
+    <a appButton variant="secondary" routerLink="/work">View all work</a>
   </div>
 </app-section>
 

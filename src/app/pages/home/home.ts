@@ -28,7 +28,7 @@ import { WritingCard } from '../../ui/writing-card/writing-card';
   templateUrl: './home.html',
 })
 export class Home {
-  protected readonly projects = projects;
+  protected readonly featuredProjects = projects.slice(0, 3);
   protected readonly writings = writings.slice(0, 2);
   protected readonly workAreas = [
     'Frontend architecture and micro frontends',

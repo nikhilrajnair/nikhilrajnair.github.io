@@ -226,6 +226,17 @@ button {
   padding-bottom: 0;
 }
 
+.section-actions {
+  display: flex;
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 64rem) {
+  .home-projects {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .work-grid,
 .secondary-grid {
   padding-bottom: 0;
