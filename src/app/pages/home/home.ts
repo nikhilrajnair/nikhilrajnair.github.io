@@ -2,7 +2,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { projects } from '@content/projects';
 import { writings } from '@content/writings';
-import { Badge } from '@ui/badge/badge';
 import { Button } from '@ui/button/button';
 import { Container } from '@ui/container/container';
 import { CtaSection } from '@ui/cta-section/cta-section';
@@ -14,7 +13,6 @@ import { WritingCard } from '@ui/writing-card/writing-card';
 @Component({
   selector: 'app-home',
   imports: [
-    Badge,
     Button,
     Container,
     CtaSection,

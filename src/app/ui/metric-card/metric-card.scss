@@ -7,10 +7,8 @@ article {
   height: 100%;
   padding: var(--space-5);
   border: 1px solid var(--color-border);
-  border-top: 3px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
   border-radius: var(--radius-md);
-  background: linear-gradient(145deg, #ffffff, color-mix(in srgb, var(--color-accent) 4%, #ffffff));
-  box-shadow: var(--shadow-xs);
+  background: var(--color-surface);
 }
 
 strong {
@@ -19,7 +17,7 @@ strong {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: var(--font-weight-semibold);
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
 }
 
 h3 {

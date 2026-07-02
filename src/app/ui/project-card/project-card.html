@@ -1,5 +1,5 @@
 <article>
-  @if (project().coverImage; as coverImage) {
+  @if (!compact() && project().coverImage; as coverImage) {
     <div class="cover-image">
       <img
         [src]="coverImage"
@@ -24,43 +24,31 @@
 
   @if (!compact()) {
     @if (project().outcome; as impact) {
-      <p class="impact"><span>Impact</span>{{ impact }}</p>
+      <p class="impact">{{ impact }}</p>
     }
   }
 
-  <div class="stack">
-    <span>Tech stack</span>
-    @if (project().skills.length) {
-      <ul aria-label="Technologies used">
-        @for (skill of project().skills; track skill) {
-          <li>{{ skill }}</li>
-        }
-      </ul>
-    } @else {
-      <p class="unavailable">Not published</p>
-    }
-  </div>
+  @if (stackLine(); as stack) {
+    <p class="stack" aria-label="Technologies used">{{ stack }}</p>
+  }
 
-  @if (compact()) {
-    @if (project().detailPath) {
-      <a appButton variant="secondary" [routerLink]="project().detailPath">View project</a>
-    } @else if (project().externalUrl) {
+  <footer class="card-footer">
+    @if (project().detailPath; as detailPath) {
+      <a class="case-link" [routerLink]="detailPath">
+        {{ compact() ? 'View project' : 'View case study' }}
+      </a>
+    } @else if (project().externalUrl; as externalUrl) {
       <a
-        appButton
-        variant="secondary"
-        [href]="project().externalUrl"
+        class="case-link external"
+        [href]="externalUrl"
         target="_blank"
         rel="noreferrer"
         [attr.aria-label]="'View ' + project().title + ' (opens in a new tab)'"
       >
-        View project <span aria-hidden="true">↗</span>
+        View project
       </a>
     } @else {
-      <span class="unavailable-action" aria-disabled="true">Details coming soon</span>
+      <span class="unavailable">Details coming soon</span>
     }
-  } @else if (project().detailPath; as detailPath) {
-    <footer class="card-footer">
-      <a class="case-link" [routerLink]="detailPath">View case study</a>
-    </footer>
-  }
+  </footer>
 </article>

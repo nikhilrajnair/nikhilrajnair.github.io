@@ -2,14 +2,11 @@
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  padding: 0.3rem var(--space-3);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 28%, var(--color-border));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
   color: var(--color-accent);
+  font-family: var(--font-mono);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.04em;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.1em;
   line-height: 1.4;
   text-transform: uppercase;
 }

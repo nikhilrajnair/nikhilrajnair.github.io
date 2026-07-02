@@ -70,7 +70,7 @@ describe('App', () => {
     );
     const unavailableProjects = Array.from(
       harness.routeNativeElement?.querySelectorAll<HTMLElement>(
-        'app-project-card.compact .unavailable-action',
+        'app-project-card.compact .unavailable',
       ) ?? [],
     );
     expect(caseStudyLinks.length).toBe(projects.length);

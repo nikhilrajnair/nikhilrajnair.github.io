@@ -3,23 +3,20 @@
   z-index: 10;
   top: 0;
   display: block;
-  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-background) 86%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  backdrop-filter: blur(14px) saturate(130%);
 }
 
 header {
-  width: min(calc(100% - var(--space-6)), calc(var(--content-wide) + var(--space-8)));
+  width: min(calc(100% - var(--space-8)), var(--content-wide));
   margin-inline: auto;
-  border: 1px solid color-mix(in srgb, var(--color-border) 78%, transparent);
-  border-radius: var(--radius-xl);
-  background: color-mix(in srgb, var(--color-surface) 84%, transparent);
-  box-shadow: var(--shadow-xs);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
 }
 
 .header-inner {
   display: grid;
-  min-height: 3.5rem;
+  min-height: 4.25rem;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: var(--space-5);
@@ -77,15 +74,12 @@ a[appButton] {
 }
 
 @media (max-width: 44rem) {
-  :host {
-    padding-block: var(--space-2);
-  }
-
   header {
-    width: min(calc(100% - var(--space-4)), calc(var(--content-wide) + var(--space-8)));
+    width: min(calc(100% - var(--space-6)), var(--content-wide));
   }
 
   .header-inner {
+    min-height: 3.75rem;
     grid-template-columns: auto 1fr;
     gap: var(--space-4);
   }

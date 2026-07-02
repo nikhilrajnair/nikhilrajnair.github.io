@@ -1,20 +1,22 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  --color-background: #f6f5ff;
-  --color-surface: #ffffff;
-  --color-surface-subtle: #edeaff;
-  --color-section-alt: #f1f0fd;
-  --color-text: #1c1a3a;
-  --color-text-muted: #5c5776;
-  --color-text-subtle: #7168a6;
-  --color-border: #dbd8f0;
-  --color-border-strong: #c4c0e0;
-  --color-accent: #5b50e8;
-  --color-accent-hover: #4a3fd4;
-  --color-focus: #5b50e8;
+  --color-background: #0b0f1a;
+  --color-surface: #111828;
+  --color-surface-subtle: #172033;
+  --color-section-alt: #0e1422;
+  --color-text: #e6edf7;
+  --color-text-muted: #9aa8bf;
+  --color-text-subtle: #6f7d95;
+  --color-border: #1e2940;
+  --color-border-strong: #2e3c5c;
+  --color-accent: #4fd1c5;
+  --color-accent-hover: #7ce3d9;
+  --color-focus: #4fd1c5;
+  --color-on-accent: #06251f;
 
   --font-sans: 'Geist', 'Inter', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', monospace;
   --font-size-xs: 0.78rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -49,9 +51,10 @@
   --radius-md: 0.875rem;
   --radius-lg: 1.25rem;
   --radius-xl: 1.75rem;
-  --shadow-xs: 0 1px 2px rgb(0 0 0 / 3%);
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 4%), 0 8px 24px rgb(0 0 0 / 4%);
-  --shadow-md: 0 2px 5px rgb(0 0 0 / 4%), 0 16px 38px rgb(0 0 0 / 6%);
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 25%);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 30%);
+  --shadow-md: 0 2px 5px rgb(0 0 0 / 30%), 0 16px 38px rgb(0 0 0 / 40%);
+  --shadow-lg: 0 4px 12px rgb(0 0 0 / 35%), 0 24px 48px rgb(0 0 0 / 45%);
   --duration-fast: 140ms;
   --duration-base: 180ms;
 
@@ -98,6 +101,7 @@ h3 {
   text-wrap: balance;
 }
 
+
 h1 {
   font-size: var(--font-size-2xl);
 }
@@ -135,9 +139,10 @@ button {
 
 .eyebrow {
   color: var(--color-accent);
+  font-family: var(--font-mono);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.09em;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -149,28 +154,100 @@ button {
 }
 
 .hero {
-  max-width: 58rem;
-  padding-block: clamp(var(--space-10), 5vw, var(--space-16)) var(--space-6);
+  position: relative;
+  max-width: 64rem;
+  padding-block: clamp(var(--space-12), 7vw, var(--space-20)) var(--space-8);
+}
+
+.hero::before {
+  position: absolute;
+  z-index: -1;
+  top: -8rem;
+  left: -10rem;
+  width: 48rem;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-accent) 7%, transparent),
+    transparent 65%
+  );
+  content: '';
+  pointer-events: none;
 }
 
 .hero-copy {
-  max-width: 58rem;
+  max-width: 64rem;
 }
 
 .hero h1 {
-  max-width: 46ch;
+  max-width: none;
+  text-wrap: pretty;
   margin-block: var(--space-4) var(--space-5);
   font-size: var(--font-size-display);
-  line-height: var(--line-height-display);
-  letter-spacing: -0.045em;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
   font-weight: var(--font-weight-bold);
+}
+
+.hero h1 em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.35rem var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, var(--color-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-accent) 7%, transparent);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.05em;
+}
+
+.availability::before {
+  width: 0.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px rgb(52 211 153 / 70%);
+  content: '';
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-3);
   margin-top: var(--space-6);
+}
+
+.hero-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+  padding: 0;
+  list-style: none;
+}
+
+.hero-social a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.hero-social a:hover {
+  color: var(--color-accent);
 }
 
 .page-intro {
@@ -337,8 +414,8 @@ button {
 
   .hero h1 {
     font-size: 2.25rem;
-    line-height: 1.05;
-    letter-spacing: -0.035em;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
   }
 
   .hero .lede {
