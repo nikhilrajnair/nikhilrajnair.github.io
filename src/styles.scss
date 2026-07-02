@@ -1,3 +1,26 @@
+@mixin light-tokens {
+  color-scheme: light;
+
+  --color-background: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #eef2f8;
+  --color-section-alt: #eff3f9;
+  --color-text: #101828;
+  --color-text-muted: #46536b;
+  --color-text-subtle: #5f6d87;
+  --color-border: #dbe2ee;
+  --color-border-strong: #b9c4d8;
+  --color-accent: #0d9488;
+  --color-accent-hover: #0f766e;
+  --color-focus: #0d9488;
+  --color-on-accent: #ffffff;
+
+  --shadow-xs: 0 1px 2px rgb(16 24 40 / 6%);
+  --shadow-sm: 0 1px 2px rgb(16 24 40 / 6%), 0 8px 24px rgb(16 24 40 / 8%);
+  --shadow-md: 0 2px 5px rgb(16 24 40 / 6%), 0 16px 38px rgb(16 24 40 / 10%);
+  --shadow-lg: 0 4px 12px rgb(16 24 40 / 8%), 0 24px 48px rgb(16 24 40 / 12%);
+}
+
 :root {
   color-scheme: dark;
 
@@ -60,6 +83,16 @@
 
   --content-copy: 44rem;
   --content-wide: 72rem;
+}
+
+:root[data-theme='light'] {
+  @include light-tokens;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    @include light-tokens;
+  }
 }
 
 *,

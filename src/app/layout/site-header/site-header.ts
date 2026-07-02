@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeService } from '../../theme';
 import { Button } from '@ui/button/button';
 import { Container } from '@ui/container/container';
 
@@ -10,4 +11,6 @@ import { Container } from '@ui/container/container';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './site-header.scss',
 })
-export class SiteHeader {}
+export class SiteHeader {
+  protected readonly theme = inject(ThemeService);
+}
